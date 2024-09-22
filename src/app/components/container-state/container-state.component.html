@@ -1,0 +1,87 @@
+<!--!Container de cada state-->
+<!--TODO-->
+
+<div class="grid_container--state  w-[90%] h-full mx-auto flex flex-col gap-4">
+
+	<div class="container_state item1
+		w-full h-[400px]
+		relative
+		rounded-[2.5rem]
+		">
+		<div class="container_state--after
+				w-[90%] h-[90%]
+				absolute
+				top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
+				flex flex-col justify-around
+				">
+			<h1 class="text-white text-2xl font-bold  ">To Do</h1>
+			<!--!Lista de Cards-->
+			<div class="
+					w-[90%] h-[60%]
+					mx-auto
+				">
+				<app-list-state [cardState]=" 'todo' " class="w-full h-full" />
+
+			</div>
+			<div class="container_state--btn text-gray-400 text-md flex gap-3">
+				<span class="addTodo_icon text-[1.5rem]">+</span>
+				<button>Add one Card</button>
+			</div>
+		</div>
+	</div>
+	<div class="container_state item2
+		w-full h-[400px] 
+		relative
+		rounded-[2.5rem]
+		">
+		<div class="container_state--after
+			w-[90%] h-[90%]
+			absolute
+			top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
+			flex flex-col justify-around
+			">
+			<h1 class="text-white text-2xl font-bold  ">Doing</h1>
+			<!--!Lista de Cards-->
+			<div class="
+				w-[90%] h-[60%]
+				mx-auto
+			">
+				<app-list-state [cardState]=" 'doing' " class="w-full h-full" />
+
+			</div>
+			<div></div>
+		</div>
+	</div>
+	<div class="container_state item3
+		w-full h-[400px]
+		relative
+		rounded-[2.5rem]
+		">
+		<div class="container_state--after
+			w-[90%] h-[90%]
+			absolute
+			top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
+			flex flex-col justify-around
+			">
+			<div class="container_state--afterHeader
+				flex justify-between
+				
+				
+			">
+				<h1 class="text-white text-2xl font-bold  ">Done</h1>
+				<button type="button"
+					class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br   font-medium rounded-lg text-sm px-5 py-1.5 text-center me-2 mb-2">All
+					Remove</button>
+			</div>
+			<!--!Lista de Cards-->
+			<div class="
+				w-[90%] h-[60%]
+				mx-auto
+			">
+				<app-list-state [cardState]=" 'done' " class="w-full h-full" />
+			</div>
+			<div></div>
+		</div>
+	</div>
+
+</div>

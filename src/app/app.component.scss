@@ -1,0 +1,44 @@
+// Función para puntos de quiebre
+@function breakpoint($size) {
+
+  @if $size == 'mm' {
+    @return '(min-width: 360px)'; // Pequeño (Small)
+  }
+  
+  @else if $size == 'sm' {
+    @return '(min-width: 640px)'; // Pequeño (Small)
+  }
+
+  @else if $size == 'md' {
+    //@return '(min-width: 768px)'; // Mediano (Medium)
+    @return '(min-width: 860px)'; // Mediano (Medium)
+  }
+
+  @else if $size == 'lg' {
+    //@return '(min-width: 1024px)'; // Grande (Large)
+    @return '(min-width: 1300px)'; // Grande (Large)
+  }
+
+  @else if $size == 'xl' {
+    @return '(min-width: 1280px)'; // Extra Grande (Extra Large)
+  }
+
+  @else if $size == '2xl' {
+    @return '(min-width: 1536px)'; // Doble Extra Grande (2XL)
+  }
+
+  @else {
+    @error "Tamaño de punto de quiebre '#{$size}' no válido.";
+  }
+}
+
+// Mixin para aplicar estilos basados en el punto de quiebre
+@mixin responsive-to($size) {
+  @media #{breakpoint($size)} {
+    @content;
+  }
+}
+
+
+
+

@@ -1,0 +1,67 @@
+@use '../../app.component.scss' as *;
+
+.container_state{
+	background-color: #343A40;
+}
+
+
+.grid_container--state{
+  
+	//!MD
+  @include responsive-to('md'){
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto ;
+		gap: 10px;
+  }
+
+	.item1{
+		@include responsive-to('md'){
+			grid-column: 1;
+			grid-row: 1;
+		}
+	}
+	.item2{
+		@include responsive-to('md'){
+			grid-column: 2;
+			grid-row: 1;
+		}
+	}
+	.item3{
+		@include responsive-to('md'){
+			grid-column: 1 / span 2;
+			grid-row: 2;
+		}
+	}
+
+	//!LG
+  @include responsive-to('lg'){
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: 1fr;
+		gap: 10px;
+  }
+
+	.item1{
+		@include responsive-to('lg'){
+			grid-column: 1;
+			grid-row: 1;
+		}
+	}
+	.item2{
+		@include responsive-to('lg'){
+			grid-column: 2;
+			grid-row: 1;
+		}
+	}
+	.item3{
+		@include responsive-to('lg'){
+			grid-column: 3;
+			grid-row: 1;
+		}
+	}
+
+
+
+
+} 
