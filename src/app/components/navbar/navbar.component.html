@@ -1,0 +1,76 @@
+<nav class="container_nav
+	w-full h-[70px]
+	flex
+	ps-4 pe-4
+">
+	<div class="container_nav--first
+		h-full w-[60%]
+		flex items-center gap-4 
+	">
+		<div class="nav_first--title ">
+			<h1 class="text-[1.5rem] truncate font-bold text-white leading-tight">Simple Notes</h1>
+		</div>
+		<form class="nav_first--search
+			h-[45%] w-[40%]
+			ps-1 pe-1
+			flex items-center gap-2
+			rounded-sm
+			bg-white
+			border border-transparent
+			focus-within:border-blue-500
+			focus-within:ring-[.8]
+			focus-within:ring-blue-500
+			transition-all
+		">
+			<img class="w-[25px] cursor-pointer" src="assets/img/navbar/search-icon.png" alt="">
+			<input type="search" placeholder="Search" class="
+				navbar_search
+				w-full h-full text-[.8rem]
+				border-none
+				outline-none
+				bg-transparent
+				focus:ring-0
+				focus:border-none
+			">
+		</form>
+	</div>
+	<div class="container_nav--second 
+		h-full w-[40%]
+		flex items-center justify-end gap-4
+	">
+		<div class="nav_second--btn
+			flex flex-col gap-2	
+		">
+			<div class="nav_second--btnChild
+				cursor-pointer
+				bg-white
+				py-[.150rem] px-1
+				flex gap-1  items-center
+				font-medium rounded-lg
+			">
+				<p class="text-[.5rem] font-bold">Open</p>
+				<img src="assets/img/navbar/open-folder.png"
+					class="w-[15px]"
+				alt="">
+			</div>
+			<div class="nav_second--btnChild
+				cursor-pointer
+				bg-white
+				py-[.150rem] px-1
+				flex gap-1  items-center
+				font-medium rounded-lg
+			">
+				<p class="text-[.5rem] font-bold">New</p>
+				<img src="assets/img/navbar/add-plus.png"
+					class="w-[15px]"
+				alt="">
+			</div>
+
+		</div>
+		<div class="nav_second--profile">
+			<img src="assets/img/navbar/account.png"
+				class="w-[40px]"
+			alt="">
+		</div>
+	</div>
+</nav>

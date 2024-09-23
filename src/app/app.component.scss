@@ -1,10 +1,14 @@
 // Función para puntos de quiebre
 @function breakpoint($size) {
 
-  @if $size == 'mm' {
-    @return '(min-width: 360px)'; // Pequeño (Small)
+  @if $size == 'm-sm' {
+    @return '(min-width: 369px)'; // Pequeño (Small) mobile
   }
   
+  @else if $size == 'm-md' {
+    @return '(min-width: 479px)'; // mediano (meidum) mobile
+  }
+
   @else if $size == 'sm' {
     @return '(min-width: 640px)'; // Pequeño (Small)
   }
