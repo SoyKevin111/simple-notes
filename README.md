@@ -5,6 +5,14 @@
 ## Descripción
 Simple-Notes es una aplicación web que permite a los usuarios crear y gestionar notas en diferentes estados: **Todo**, **Doing**  y **Done**. Esta herramienta es ideal para organizar tareas y proyectos de manera sencilla y efectiva.
 
+## Flujo de Trabajo con Gitflow
+
+Este proyecto sigue el flujo de trabajo de **Gitflow** para una mejor organización y control de versiones. La rama `main` contiene la versión estable, mientras que los cambios y nuevas funcionalidades se desarrollan en la rama `develop`.
+
+### ¿Para ver los cambios más recientes?
+¡Revisa la rama `develop` para estar al tanto de las últimas actualizaciones y mejoras en desarrollo del proyecto! 🚀
+
+
 ## Tecnologías Utilizadas
 
 - **HTML**: Para la estructura del contenido.
