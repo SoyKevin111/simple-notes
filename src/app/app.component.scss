@@ -24,11 +24,11 @@
   }
 
   @else if $size == 'xl' {
-    @return '(min-width: 1280px)'; // Extra Grande (Extra Large)
+    @return '(min-width: 1580px)'; // Extra Grande (Extra Large)
   }
 
   @else if $size == '2xl' {
-    @return '(min-width: 1536px)'; // Doble Extra Grande (2XL)
+    @return '(min-width: 1920px)'; // Doble Extra Grande (2XL)
   }
 
   @else {
@@ -40,6 +40,28 @@
 @mixin responsive-to($size) {
   @media #{breakpoint($size)} {
     @content;
+  }
+}
+
+
+
+//responsive width
+
+@mixin responsive_width($m-md, $sm, $md, $lg, $xl){
+  @include responsive-to('m-md') {
+    width: #{$m-md};
+  }
+  @include responsive-to('sm') {
+    width: #{$sm};
+  }
+  @include responsive-to('md') {
+    width: #{$md};
+  }
+  @include responsive-to('lg') {
+    width: #{$lg};
+  }
+  @include responsive-to('xl') {
+    width: #{$xl};
   }
 }
 

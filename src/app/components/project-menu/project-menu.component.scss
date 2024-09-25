@@ -1,3 +1,6 @@
+@use '../../app.component.scss' as *;
+
+
 .no-select {
 	user-select: none;
 	/* Para navegadores modernos */
@@ -9,6 +12,8 @@
 	/* Para Internet Explorer/Edge */
 }
 
+//!DESIGN MOBILE
+
 //!Contenedor Padre
 .container_projectMenu {
 	width: 100%;
@@ -19,18 +24,20 @@
 
 //!Primer Hijo
 .split_selectProject {
-	width: 50%;
+	width: 70%;
 	position: relative;
 }
 
 .split_selectProject--body {
 	background-color: #343A40;
-	width: 80%;
+	width: 75%;
 	cursor: pointer;
 	display: flex;
 	justify-content: space-between;
 	padding: 5px 10px;
 	border-radius: .5rem;
+
+	@include responsive_width(55%, 40%,30%, 20%,20%);
 
 	p {
 		font-size: .8rem;
@@ -49,14 +56,15 @@
 	z-index: 200;
 	background-color: #343A40;
 	border: 1px solid white;
-	width: 80%;
+	width: 75%;
 	position: absolute;
 	top: 110%;
 	display: flex;
 	flex-direction: column;
 	box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-
 	display: none;
+	@include responsive_width(55%, 40%,30%, 20%, 20%);
+
 
 	li {
 		font-size: .8rem;
@@ -75,34 +83,36 @@
 //!Ssegundo Hijo
 
 .export_projectTo {
-	width: 50%;
-	border-left: 1px solid black;
+	width: 30%;
 	display: flex;
 	justify-content: flex-end;
 	position: relative;
 }
 
 .btn_export {
-
-	width: 50%;
+	width: 90%;
 	padding: .3rem .5rem;
-	background-color: #84B6F4;
-	border:1px solid transparent;
+	background-color: #3B82F6;
+	border: 1px solid transparent;
 	border-radius: .3rem;
 	display: flex;
 	justify-content: space-between;
+	cursor: pointer;
+
+	@include responsive_width(70%,50%,35%,22%,17%);
+
 
 	&:active {
-		border:1px solid rgb(134, 141, 147); // Cambia a este color al hacer clic
+		border: 1px solid rgb(134, 141, 147); // Cambia a este color al hacer clic
 	}
 
-	p{
+	p {
 		font-size: .8rem;
 		color: #fff;
 	}
 
 	img {
-		width: 20px;
+		width: 17px;
 	}
 }
 
@@ -110,22 +120,31 @@
 	z-index: 210;
 	position: absolute;
 	top: 110%;
-	width: 50%;
-	background-color: #84B6F4;
+	width: 90%;
+	background-color: #fff;
 	display: flex;
 	flex-direction: column;
-	box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-	border: 1px solid rgb(134, 141, 147);
+	box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
+	padding: 3px;
+	border-radius: .3rem;
 	display: none;
 
+	@include responsive_width(75%,55%,38%,24%,19%);
+	
+
 	li {
-		font-size: .6rem;
-		color: #fff;
-		padding: 7px 0px 7px 7px;
-		border-bottom: 1px solid rgb(134, 141, 147);
+		font-size: .7rem;
+		padding: 4px 0px 4px 4px;
+		cursor: pointer;
+		border-radius: .3rem;
+		transition: background-color 0.2s ease;
+
+		&:hover {
+			background-color: rgba(200, 202, 207, .3);
+		}
 	}
 }
 
-.content_optionsProject--activate{
+.content_optionsProject--activate {
 	display: flex;
 }
