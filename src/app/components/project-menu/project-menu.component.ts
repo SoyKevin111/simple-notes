@@ -1,16 +1,25 @@
-import { Component } from '@angular/core';
-import {ButtonModule} from 'primeng/button';
-import { CardModule } from 'primeng/card';
+import { CommonModule } from '@angular/common';
+import { Component, NgModule } from '@angular/core';
 
-const PRIME_NG_MODULES = [ButtonModule, CardModule];
 
 @Component({
   selector: 'app-project-menu',
   standalone: true,
-  imports: [PRIME_NG_MODULES],
+  imports: [CommonModule],
   templateUrl: './project-menu.component.html',
   styleUrl: './project-menu.component.scss'
 })
 export class ProjectMenuComponent {
+
+  isSelected: boolean = false;
+  isSelectedExport: boolean = false;
+
+  toggleSelectedProject() {
+    this.isSelected = !this.isSelected;
+  }
+
+  toggleSelectedExport() {
+    this.isSelectedExport = !this.isSelectedExport;
+  }
 
 }
