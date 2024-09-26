@@ -4,6 +4,15 @@
 	background-color: #343A40;
 }
 
+.container_state {
+	@include responsive-to('lg'){
+		height: 400px;
+	}
+	@include responsive-to('xl'){
+		height: 450px;
+	}
+}
+
 
 .grid_container--state{
   
@@ -36,6 +45,7 @@
 
 	//!LG
   @include responsive-to('lg'){
+		width: 95%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 		grid-template-rows: 1fr;

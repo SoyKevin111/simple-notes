@@ -1,33 +1,33 @@
 // Función para puntos de quiebre
 @function breakpoint($size) {
 
-  @if $size == 'm-sm' {
+  @if $size =='m-sm' {
     @return '(min-width: 369px)'; // Pequeño (Small) mobile
   }
-  
-  @else if $size == 'm-md' {
+
+  @else if $size =='m-md' {
     @return '(min-width: 479px)'; // mediano (meidum) mobile
   }
 
-  @else if $size == 'sm' {
+  @else if $size =='sm' {
     @return '(min-width: 640px)'; // Pequeño (Small)
   }
 
-  @else if $size == 'md' {
+  @else if $size =='md' {
     //@return '(min-width: 768px)'; // Mediano (Medium)
     @return '(min-width: 860px)'; // Mediano (Medium)
   }
 
-  @else if $size == 'lg' {
+  @else if $size =='lg' {
     //@return '(min-width: 1024px)'; // Grande (Large)
     @return '(min-width: 1300px)'; // Grande (Large)
   }
 
-  @else if $size == 'xl' {
+  @else if $size =='xl' {
     @return '(min-width: 1520px)'; // Extra Grande (Extra Large)
   }
 
-  @else if $size == '2xl' {
+  @else if $size =='2xl' {
     @return '(min-width: 1920px)'; // Doble Extra Grande (2XL)
   }
 
@@ -47,43 +47,48 @@
 
 //responsive width
 
-@mixin responsive_width($m-md, $sm, $md, $lg, $xl){
+@mixin responsive_width($m-md, $sm, $md, $lg, $xl) {
   @include responsive-to('m-md') {
     width: #{$m-md};
   }
+
   @include responsive-to('sm') {
     width: #{$sm};
   }
+
   @include responsive-to('md') {
     width: #{$md};
   }
+
   @include responsive-to('lg') {
     width: #{$lg};
   }
+
   @include responsive-to('xl') {
     width: #{$xl};
   }
 }
 
 
-@mixin responsive_Left($m-md, $sm, $md, $lg, $xl){
+@mixin responsive_Left($m-md, $sm, $md, $lg, $xl) {
   @include responsive-to('m-md') {
     left: #{$m-md};
   }
+
   @include responsive-to('sm') {
     left: #{$sm};
   }
+
   @include responsive-to('md') {
     left: #{$md};
   }
+
   @include responsive-to('lg') {
     left: #{$lg};
   }
+
   @include responsive-to('xl') {
     left: #{$xl};
   }
 }
-
-
-
 
