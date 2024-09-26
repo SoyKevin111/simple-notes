@@ -24,7 +24,7 @@
   }
 
   @else if $size == 'xl' {
-    @return '(min-width: 1580px)'; // Extra Grande (Extra Large)
+    @return '(min-width: 1520px)'; // Extra Grande (Extra Large)
   }
 
   @else if $size == '2xl' {

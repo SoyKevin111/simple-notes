@@ -84,6 +84,7 @@
 //!Ssegundo Hijo
 
 .export_projectTo {
+	border-left: 1px solid black;
 	width: 30%;
 	display: flex;
 	justify-content: flex-end;
@@ -91,6 +92,7 @@
 }
 
 .btn_export {
+	
 	width: 90%;
 	padding: .3rem .5rem;
 	background-color: #3B82F6;
@@ -100,7 +102,7 @@
 	justify-content: space-between;
 	cursor: pointer;
 
-	@include responsive_width(70%,50%,35%,22%,17%);
+	@include responsive_width(60%,40%,32%,22%,20%);
 
 
 	&:active {
@@ -130,7 +132,7 @@
 	border-radius: .3rem;
 	display: none;
 
-	@include responsive_width(75%,55%,38%,24%,19%);
+	@include responsive_width(70%,50%,35%,27%,23%);
 	
 
 	li {
