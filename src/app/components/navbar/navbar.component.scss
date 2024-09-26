@@ -5,63 +5,40 @@
 	background-color: #343A40;
 }
 
-//truncate
+.container_nav--first {
+	border-left: 1px solid white;
+}
 
-
-//Mobile medium
-.container_nav {
-	.container_nav--first {
-		@include responsive-to('m-md') {
-			width: 75%;
-		}
-	}
-
-	.container_nav--second {
-		@include responsive-to('m-md') {
-			width: 25%;
-		}
-	}
+.container_nav--second {
+	border-left: 1px solid white;
+	border-right: 1px solid white;
 }
 
 
 
-//>>Desktop
-.container_nav {
+//Base apagado
+.nav_firstSearch-sm-xl {
+	display: none;
+}
 
-	.container_nav--first {
-		@include responsive-to('sm') {
-			width: 60%;
+//Encendido
+
+.container_nav--first {
+
+	@include responsive-to('sm') {
+		.nav_firstTitle{
+			font-size: 2rem;
+			flex-direction: row;
+			gap: .3rem;
 		}
 
-		.nav_first--search {
-			@include responsive-to('lg') {
-				width: 30%;
-			}
+		.nav_firstSearch-m-sm-md{
+			display: none;
 		}
-	}
+		.nav_firstSearch-sm-xl {
+			display: flex;
 
 
-	.container_nav--second {
-		width: 40%;
-
-		.nav_second--btn {
-			@include responsive-to('sm') {
-				flex-direction: row;
-			}
-
-			.nav_second--btnChild {
-				@include responsive-to('sm') {
-					padding: 0.4rem 1rem;
-					gap: .5rem;
-					p {
-						font-size: 0.7rem;
-					}
-
-					img {
-						width: 20px;
-					}
-				}
-			}
 		}
 	}
 
