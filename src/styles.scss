@@ -1,8 +1,16 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "../node_modules/tailwindcss/base.css" layer(tailwindcss);
+@import "../node_modules/tailwindcss/components.css" layer(tailwindcss);
+@import "../node_modules/tailwindcss/utilities.css" layer(tailwindcss);
+@import "primeng/resources/themes/lara-light-blue/theme.css" layer(primeng);
+@import "primeng/resources/primeng.css" layer(primeng);
 
 
-*{
-	box-sizing: border-box;
+@layer reset, primeng;
+
+@layer reset {
+	button {
+		&:focus {
+			box-shadow: none;
+		}
+	}
 }
