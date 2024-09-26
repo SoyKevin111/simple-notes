@@ -66,5 +66,24 @@
 }
 
 
+@mixin responsive_Left($m-md, $sm, $md, $lg, $xl){
+  @include responsive-to('m-md') {
+    left: #{$m-md};
+  }
+  @include responsive-to('sm') {
+    left: #{$sm};
+  }
+  @include responsive-to('md') {
+    left: #{$md};
+  }
+  @include responsive-to('lg') {
+    left: #{$lg};
+  }
+  @include responsive-to('xl') {
+    left: #{$xl};
+  }
+}
+
+
 
 

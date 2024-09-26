@@ -3,38 +3,36 @@
 ">
 
 	<div class="split_selectProject no-select">
-	
-		<div class="split_selectProject--body"
-			(click)="toggleSelectedProject()"
-		>
+
+		<div class="split_selectProject--body" (click)="toggleSelectedProject()">
 			<p class="btn_selectProject">Project Name New</p>
 			<img class="icon_selectProject" src="assets\img\icon\icon-menu-project\chevron down.svg">
 		</div>
-	
-		<ul class="project_content"
-			[ngClass]="{'project_content--active': isSelected}"
-		>
-			<li>Project 1</li>
-			<li>Project 2</li>
-			<li>Project 3</li>
+
+		<ul class="project_content" [ngClass]="{'project_content--active': isSelected}">
+			<li (click)="liHiddenSelected()">Project 1</li>
+			<li (click)="liHiddenSelected()">Project 2</li>
+			<li (click)="liHiddenSelected()">Project 3</li>
 		</ul>
-	
+
 	</div>
 
 	<div class="export_projectTo no-select">
-		<div class="btn_export"
-			(click)="toggleSelectedExport()"
-		>
+		<div class="btn_export" (click)="toggleSelectedExport()">
 			<p>Export</p>
 			<img class="icon_selectProject" src="assets\img\icon\icon-menu-project\export.png" alt="">
 		</div>
 
-		<ul class="content_optionsProject"
-		[ngClass]="{'content_optionsProject--activate':isSelectedExport}"
-		>
-			<li>export to text</li>
-			<li>export to json</li>
-		</ul>
+		<ul class="content_optionsProject" [ngClass]="{'content_optionsProject--activate':isSelectedExport}">
+			<li (click)="selectExportText()">
+				export to text
+			</li>
+			<li (click)="selectExportJson()">
+				export to json</li>
+			</ul>
+			
+			<app-toast [dataToast]="typeToast" [stateToast]="showToast" (stateToastEvnEm)="closeToastEv()" />
+		
 	</div>
 
 </div>
