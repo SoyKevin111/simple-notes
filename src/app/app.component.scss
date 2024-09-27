@@ -46,7 +46,6 @@
 
 
 //responsive width
-
 @mixin responsive_width($m-md, $sm, $md, $lg, $xl) {
   @include responsive-to('m-md') {
     width: #{$m-md};
@@ -69,7 +68,7 @@
   }
 }
 
-
+//responsive Left
 @mixin responsive_Left($m-md, $sm, $md, $lg, $xl) {
   @include responsive-to('m-md') {
     left: #{$m-md};

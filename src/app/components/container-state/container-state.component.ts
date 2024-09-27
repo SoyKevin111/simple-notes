@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
-import { ListStateComponent } from '../list-state/list-state.component';
+import { ListCardStateComponent } from '../list-card-state/list-card-state.component';
 
 @Component({
   selector: 'app-container-state',
   standalone: true,
-  imports: [ListStateComponent],
+  imports: [ListCardStateComponent],
   templateUrl: './container-state.component.html',
   styleUrl: './container-state.component.scss'
 })
