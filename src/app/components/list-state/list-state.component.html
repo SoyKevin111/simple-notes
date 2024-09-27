@@ -12,23 +12,23 @@
 	[ngClass]="cardState === 'doing' ? 'gap-[1rem]': '' "	>
 	<!--!CARD-->
 	@if(cardState === 'todo'){
-		<app-card class="card--todo w-full h-full" />
-		<app-card class="card--todo w-full h-full" />
-		<app-card class="card--todo w-full h-full" />
-		<app-card class="card--todo w-full h-full" />
-		<app-card class="card--todo w-full h-full" />
+		<card-todo class="card--todo w-full h-full" />
+		<card-todo class="card--todo w-full h-full" />
+		<card-todo class="card--todo w-full h-full" />
+		<card-todo class="card--todo w-full h-full" />
+		<card-todo class="card--todo w-full h-full" />
 	}@else if(cardState === 'doing'){
-		<app-card-v2 class="card--todo w-full h-full" />
-		<app-card-v2 class="card--todo w-full h-full" />
-		<app-card-v2 class="card--todo w-full h-full" />
-		<app-card-v2 class="card--todo w-full h-full" />
-		<app-card-v2 class="card--todo w-full h-full" />
+		<card-doing class="card--todo w-full h-full" />
+		<card-doing class="card--todo w-full h-full" />
+		<card-doing class="card--todo w-full h-full" />
+		<card-doing class="card--todo w-full h-full" />
+		<card-doing class="card--todo w-full h-full" />
 	} @else if(cardState === 'done'){
-		<app-card-v3 class="card--todo w-full h-full" />
-		<app-card-v3 class="card--todo w-full h-full" />
-		<app-card-v3 class="card--todo w-full h-full" />
-		<app-card-v3 class="card--todo w-full h-full" />
-		<app-card-v3 class="card--todo w-full h-full" />
+		<card-done class="card--todo w-full h-full" />
+		<card-done class="card--todo w-full h-full" />
+		<card-done class="card--todo w-full h-full" />
+		<card-done class="card--todo w-full h-full" />
+		<card-done class="card--todo w-full h-full" />
 	}
 	
 
