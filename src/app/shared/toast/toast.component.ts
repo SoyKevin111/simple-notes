@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-toast',
@@ -15,9 +15,9 @@ export class ToastComponent {
   @Output() stateToastEvnEm = new EventEmitter()  //enviando el nuevo state del toast
 
   //Signal para conformar el toast
-  @Input() dataToast:string = ''; //add, delete, exportJson, exportText
+  @Input() dataToast: string = ''; //add, delete, exportJson, exportText
 
-  closeToast(){
+  closeToast() {
     this.stateToast = !this.closeToast; //de true a false
     this.stateToastEvnEm.emit(this.stateToast) //ahora sera false
   }
