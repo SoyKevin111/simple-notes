@@ -11,9 +11,9 @@
 		</div>
 
 		<ul class="project_content" [ngClass]="{'project_content--active': isSelected}">
-			<li (click)="liHiddenSelected()">Project 1</li>
-			<li (click)="liHiddenSelected()">Project 2</li>
-			<li (click)="liHiddenSelected()">Project 3</li>
+			<li (click)="itemProjectSelected()">Project 1</li>
+			<li (click)="itemProjectSelected()">Project 2</li>
+			<li (click)="itemProjectSelected()">Project 3</li>
 		</ul>
 
 	</div>
@@ -31,8 +31,6 @@
 			<li (click)="selectExportJson()">
 				export to json</li>
 			</ul>
-			
-			<app-toast [dataToast]="typeToast" [stateToast]="showToast" (stateToastEvnEm)="closeToastEv()" />
 		
 	</div>
 
