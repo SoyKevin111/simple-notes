@@ -1,3 +1,9 @@
-#crud-modal{
-	background-color: rgba(53, 54, 56, 0.3);
+.addCardHidden{
+	z-index: 280;
+	background-color: rgba(53, 54, 56, 0.5);
+	display: none;
+}
+
+.addCardActive{
+	display: flex;
 }
