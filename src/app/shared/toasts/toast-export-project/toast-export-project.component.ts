@@ -18,14 +18,21 @@ export class ToastExportProjectComponent implements OnInit {
 
   @Input() dataExportToast: string = ''; //add, delete, exportJson, exportText
 
+  fadingOut: boolean = false;
+
   ngOnInit(): void {
   if(this.stateExportToast)      {
       setTimeout(()=>{
-        this.closeToastExportProject();
-      }, 2000)
+        this.startFadingOut();
+      }, 1500)
     }
   }
-
+  startFadingOut() {
+    this.fadingOut = true;
+    setTimeout(() => {
+      this.closeToastExportProject();
+    }, 1500);
+  }
 
   closeToastExportProject() {
     this.stateExportToast = this.stateExportToast = false; //de true a false
