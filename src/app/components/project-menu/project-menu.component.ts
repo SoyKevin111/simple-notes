@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { ToastComponent } from '../../shared/toast/toast.component';
+import { Component, inject } from '@angular/core';
+import { ToastService } from '../../shared/toasts/toast.service';
+import { ToastExportProjectComponent } from '../../shared/toasts/toast-export-project/toast-export-project.component';
 
 
 
@@ -9,43 +10,41 @@ import { ToastComponent } from '../../shared/toast/toast.component';
 @Component({
   selector: 'app-project-menu',
   standalone: true,
-  imports: [CommonModule, ToastComponent],
+  imports: [CommonModule],
   templateUrl: './project-menu.component.html',
   styleUrl: './project-menu.component.scss'
 })
 export class ProjectMenuComponent {
 
+  //servicio
+  private _toastService = inject(ToastService);
+
   isSelected: boolean = false;
   isSelectedExport: boolean = false;
-  showToast: boolean = false;
 
-  typeToast:string = '';
 
-  liHiddenSelected(){
-    this.isSelected = !this.isSelected;
-  }
 
+  //?Selected Project
   toggleSelectedProject() {
-    this.isSelected = !this.isSelected;
+    this.isSelected = !this.isSelected; //close selected project
   }
 
+  itemProjectSelected(){
+    this.toggleSelectedProject(); //close selected project
+  }
+
+  //?Selected Export Project
   toggleSelectedExport() {
     this.isSelectedExport = !this.isSelectedExport;
   }
 
   selectExportText() {
-    this.typeToast = 'exportText';
-    this.showToast = true; //activar
     this.toggleSelectedExport();
+    this._toastService.open(ToastExportProjectComponent,{stateExportToast: true, dataExportToast: 'Project saved to Text.'})
   }
   selectExportJson() {
-    this.typeToast = 'exportJson';
-    this.showToast = true; //activar
     this.toggleSelectedExport();
-  }
-
-  closeToastEv(){
-    this.showToast = false; //activar
+    this._toastService.open(ToastExportProjectComponent,{stateExportToast: true, dataExportToast: 'Project saved to Json.'})
   }
 
 
