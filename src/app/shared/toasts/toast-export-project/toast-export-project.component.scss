@@ -1,5 +1,7 @@
 @use '../../../app.component.scss' as *;
 
+
+
 .container_toast {
 	width: 100%;
 	position: fixed;
@@ -28,6 +30,7 @@
 
 
 .container_toast--fade {
-  opacity: 0; 
-  transition: opacity 0.5s ease-in-out;
+	opacity: 0; 
+	transform: translateY(-20px); // Mueve un poco hacia arriba
+	transition: opacity .9s ease-in-out, transform .7s ease-in-out; 
 }

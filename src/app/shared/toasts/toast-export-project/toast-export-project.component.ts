@@ -27,7 +27,7 @@ export class ToastExportProjectComponent implements OnInit {
       }, 1500)
     }
   }
-  startFadingOut() {
+  startFadingOut() { //inicio desvanecimiento.
     this.fadingOut = true;
     setTimeout(() => {
       this.closeToastExportProject();
