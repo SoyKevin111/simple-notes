@@ -1,7 +1,7 @@
 <!-- Main modal -->
 <div #divPrincipal
   [ngClass]="{ 'addCardActive': modal_addTaskVisible==true} "
-  id="crud-modal" tabindex="-1" aria-hidden="true" class="addCardHidden fixed inset-0 z-50 flex items-center justify-center w-full h-screen overflow-y-auto overflow-x-hidden">
+  id="crud-modal" tabindex="-1" class="addCardHidden fixed inset-0 z-50 flex items-center justify-center w-full h-screen overflow-y-auto overflow-x-hidden">
   <div class="relative max-h-full w-full max-w-md p-4">
     <!-- Modal content -->
     <div class="relative rounded-lg bg-white shadow ">
@@ -9,14 +9,14 @@
       <div class="flex items-center justify-between rounded-t border-b p-4 md:p-5 ">
         <h3 class="text-lg font-semibold text-gray-900 ">New Task</h3>
         <button (click)="closeModal_addTask()" type="button" class="ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 " data-modal-toggle="crud-modal">
-          <svg class="h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+          <svg class="h-3 w-3"  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
           </svg>
           <span class="sr-only">Close modal</span>
         </button>
       </div>
       <!-- Modal body -->
-      <form class="p-4 md:p-5">
+      <form (submit)="onSubmit($event)" class="p-4 md:p-5">
         <div class="mb-4 grid grid-cols-2 gap-4">
           <div class="col-span-2">
             <label for="name" class="mb-2 block text-sm font-medium text-gray-900 ">Name</label>
@@ -39,7 +39,12 @@
 
 
         </div>
-        <button type="submit" class="mx-auto flex items-center rounded-lg bg-blue-700 px-7 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 ">Create task</button>
+        <button
+          
+          type="submit" class="mx-auto flex items-center rounded-lg bg-blue-700 px-7 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 
+        ">
+          Create task
+        </button>
       </form>
     </div>
   </div>

@@ -20,4 +20,12 @@ export class ModalAddCardComponent {
     this._modalService.close();
   }
 
+
+  onSubmit(event: Event): void {
+    event.preventDefault();
+    this.modal_addTaskVisible = false;
+    this._modalService.close();
+    //servicio para agregar la tarjeta.
+  }
+
 }
