@@ -6,14 +6,14 @@
 	<div class="split_selectProject no-select">
 
 		<div class="split_selectProject--body" (click)="toggleSelectedProject()">
-			<p class="btn_selectProject">Project Name New</p>
+			<p class="btn_selectProject">{{nameItemSelected}}</p>
 			<img class="icon_selectProject" src="assets\img\icon\icon-menu-project\chevron down.svg">
 		</div>
 
 		<ul class="project_content" [ngClass]="{'project_content--active': isSelected}">
-			<li (click)="itemProjectSelected()">Project 1</li>
-			<li (click)="itemProjectSelected()">Project 2</li>
-			<li (click)="itemProjectSelected()">Project 3</li>
+			@for (item of projects; track $index) {
+				<li (click)="itemProjectSelected(item.name)">{{item.name}}</li>
+			}
 		</ul>
 
 	</div>

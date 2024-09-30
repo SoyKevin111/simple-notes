@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { ToastService } from '../../shared/toasts/toast.service';
 import { ToastExportProjectComponent } from '../../shared/toasts/toast-export-project/toast-export-project.component';
 
@@ -14,7 +14,17 @@ import { ToastExportProjectComponent } from '../../shared/toasts/toast-export-pr
   templateUrl: './project-menu.component.html',
   styleUrl: './project-menu.component.scss'
 })
-export class ProjectMenuComponent {
+export class ProjectMenuComponent implements OnInit {
+
+  //simulation item project
+
+  projects = [
+    {name:'My project 1'},
+    {name:'My project 2'},
+    {name:'My project 3'}
+  ]
+
+  nameItemSelected:string = '';
 
   //servicio
   private _toastService = inject(ToastService);
@@ -22,14 +32,19 @@ export class ProjectMenuComponent {
   isSelected: boolean = false;
   isSelectedExport: boolean = false;
 
+  ngOnInit(): void {
+      this.nameItemSelected = 'choose your project'
+  }
 
 
   //?Selected Project
   toggleSelectedProject() {
     this.isSelected = !this.isSelected; //close selected project
+
   }
 
-  itemProjectSelected(){
+  itemProjectSelected(item:string){
+    this.nameItemSelected = item;
     this.toggleSelectedProject(); //close selected project
   }
 
