@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, Input } from '@angular/core';
 import { ModalService } from '../modal.service';
-import { FormGroup, ReactiveFormsModule, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { FormGroup, ReactiveFormsModule,Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'modal-add-card',

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { ModalService } from '../../shared/modals/modal.service';
+import { ModalNewProjectComponent } from '../../shared/modals/modal-new-project/modal-new-project.component';
 
 @Component({
   selector: 'app-navbar',
@@ -7,11 +9,13 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
-export class NavbarComponent implements OnInit{
+export class NavbarComponent {
 
-  ngOnInit(): void {
-      
+  //servicio modal new project
+  private _newProjectModal = inject(ModalService);
+
+  openModalNewProject() {
+    this._newProjectModal.open(ModalNewProjectComponent, { modal_newProjectVisible: true });
   }
-  
 
 }
