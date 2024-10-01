@@ -2,11 +2,11 @@
 @function breakpoint($size) {
 
   @if $size =='m-sm' {
-    @return '(min-width: 369px)'; // Pequeño (Small) mobile
+    @return '(min-width: 370px)'; // Pequeño (Small) mobile
   }
 
   @else if $size =='m-md' {
-    @return '(min-width: 479px)'; // mediano (meidum) mobile
+    @return '(min-width: 480px)'; // mediano (meidum) mobile
   }
 
   @else if $size =='sm' {
