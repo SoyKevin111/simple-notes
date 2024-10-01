@@ -90,4 +90,25 @@
     left: #{$xl};
   }
 }
+@mixin responsive_gap($m-md, $sm, $md, $lg, $xl) {
+  @include responsive-to('m-md') {
+    gap: #{$m-md};
+  }
+
+  @include responsive-to('sm') {
+    gap: #{$sm};
+  }
+
+  @include responsive-to('md') {
+    gap: #{$md};
+  }
+
+  @include responsive-to('lg') {
+    gap: #{$lg};
+  }
+
+  @include responsive-to('xl') {
+    gap: #{$xl};
+  }
+}
 

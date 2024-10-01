@@ -20,9 +20,13 @@
 	width: 100%;
 	display: flex;
 	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+
+
 	.cnt_modalSearch--form {
 		//$m-md(480), $sm(640), $md(860), $lg(1300), $xl(1520)
-		@include responsive_width(70%, 50%, 30%, 20%, 20%);
+		@include responsive_width(70%, 50%, 50%, 50%, 50%);
 	}
 }
 
