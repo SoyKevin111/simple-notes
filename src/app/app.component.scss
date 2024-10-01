@@ -2,11 +2,11 @@
 @function breakpoint($size) {
 
   @if $size =='m-sm' {
-    @return '(min-width: 369px)'; // Pequeño (Small) mobile
+    @return '(min-width: 370px)'; // Pequeño (Small) mobile
   }
 
   @else if $size =='m-md' {
-    @return '(min-width: 479px)'; // mediano (meidum) mobile
+    @return '(min-width: 480px)'; // mediano (meidum) mobile
   }
 
   @else if $size =='sm' {
@@ -88,6 +88,27 @@
 
   @include responsive-to('xl') {
     left: #{$xl};
+  }
+}
+@mixin responsive_gap($m-md, $sm, $md, $lg, $xl) {
+  @include responsive-to('m-md') {
+    gap: #{$m-md};
+  }
+
+  @include responsive-to('sm') {
+    gap: #{$sm};
+  }
+
+  @include responsive-to('md') {
+    gap: #{$md};
+  }
+
+  @include responsive-to('lg') {
+    gap: #{$lg};
+  }
+
+  @include responsive-to('xl') {
+    gap: #{$xl};
   }
 }
 

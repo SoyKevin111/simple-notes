@@ -16,7 +16,7 @@
  */
 
 
-//Base apagado
+//input search apagado
 .nav_firstSearch-sm-xl {
 	display: none;
 }
@@ -26,15 +26,27 @@
 .container_nav--first {
 
 	@include responsive-to('sm') {
+		width: 65%;
+
 		.nav_firstTitle {
 			font-size: 1.6rem;
 			flex-direction: row;
 			gap: .3rem;
 		}
+
+		.nav_firstSearch-m-sm-md {
+			display: none;
+		}
+
+		.nav_firstSearch-sm-xl {
+			width: 50%;
+			display: flex;
+
+		}
 	}
 
 	@include responsive-to('md') {
-		
+
 		width: 50%;
 
 		.nav_firstTitle {
@@ -56,11 +68,16 @@
 		gap: 3rem;
 	}
 
-	@include responsive-to('md') {
-		.container_nav--second {
-			width: 50%;
-		}
+}
+
+.container_nav--second {
+	@include responsive-to('sm') {
+		width: 35%;
 	}
+	@include responsive-to('md') {
+		width: 50%;
+	}
+
 }
 
 //Title wrap
