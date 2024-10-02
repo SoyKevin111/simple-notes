@@ -1,5 +1,5 @@
 <div
-	[ngClass]="{'container_toast--active ':stateExportToast == true, 'container_toast--fade': fadingOut}"
+	[ngClass]="{'container_toast--active ':stateToast == true, 'container_toast--fade': fadingOut}"
 	class="container_toast">
 	<div class="container_toast--after
 		w-[60%]
@@ -11,10 +11,12 @@
 	<div class="container_toast--body
 		flex items-center gap-2
 	">
-		<div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg ">
-			<img class="w-5 h-5" src="assets/img/icon/icon-toast-svg/icon-toast-export.svg" alt="icon export project">
+		<div
+			[ngStyle]="{'background-color': primaryColor}"
+			class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 rounded-lg ">
+			<img class="w-5 h-5" [src]="pathToast" alt="icon export project">
 		</div>
-		<p class="text-[.7rem] text-gray-500">{{dataExportToast}}</p>
+		<p class="text-[.7rem] text-gray-500">{{dataToast}}</p>
 	</div>
 		<button (click)="closeToastExportProject()" 
 			class="ml-auto bg-white py-3 px-3 cursor-pointer rounded-lg text-gray-400 hover:text-gray-900 hover:bg-gray-100
