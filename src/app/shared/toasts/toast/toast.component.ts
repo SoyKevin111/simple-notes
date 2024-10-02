@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, Input, OnInit} from '@angular/core';
+import { Component, ComponentRef, inject, Input, OnInit} from '@angular/core';
 import { ToastService } from '../toast.service';
 import {dataToast} from '../mocks/toast.mock';
 
@@ -25,6 +25,8 @@ export class ToastComponent implements OnInit {
   
 
   fadingOut: boolean = false;
+
+  toastRef!:ComponentRef<any>;
 
   ngOnInit(): void {
 
@@ -55,13 +57,13 @@ export class ToastComponent implements OnInit {
   startFadingOut() { //inicio desvanecimiento.
     this.fadingOut = true;
     setTimeout(() => {
-      this._toastService.close()
+      this._toastService.close(this.toastRef)
     }, 1000);
   }
 
   closeToastExportProject() {
     this.stateToast = this.stateToast = false; //de true a false
-    this._toastService.close();
+    this._toastService.close(this.toastRef);
   }
 
 
