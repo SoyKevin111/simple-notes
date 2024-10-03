@@ -2,6 +2,7 @@
 
 //GLobales
 .container_nav {
+	@include no-select;
 	background-color: #343A40;
 }
 
@@ -13,7 +14,7 @@
 	border-left: 1px solid white;
 	border-right: 1px solid white;
 }
- */
+*/
 
 
 //input search apagado
@@ -74,10 +75,9 @@
 	@include responsive-to('sm') {
 		width: 35%;
 	}
+
 	@include responsive-to('md') {
 		width: 50%;
 	}
 
 }
-
-//Title wrap

@@ -3,6 +3,7 @@
 
 
 .container_toast {
+	@include no-select;
 	width: 100%;
 	position: fixed;
 	left: 39%;
