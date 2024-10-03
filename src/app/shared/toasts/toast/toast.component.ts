@@ -26,7 +26,8 @@ export class ToastComponent implements OnInit {
 
   fadingOut: boolean = false;
 
-  toastRef!:ComponentRef<any>;
+  //referencia
+  toastRef!:ComponentRef<ToastComponent>;
 
   ngOnInit(): void {
 
@@ -57,11 +58,12 @@ export class ToastComponent implements OnInit {
   startFadingOut() { //inicio desvanecimiento.
     this.fadingOut = true;
     setTimeout(() => {
-      this._toastService.close(this.toastRef)
+      //this._toastService.close(this.toastRef)
+      this.closeToast();
     }, 1000);
   }
 
-  closeToastExportProject() {
+  closeToast() {    
     this.stateToast = this.stateToast = false; //de true a false
     this._toastService.close(this.toastRef);
   }

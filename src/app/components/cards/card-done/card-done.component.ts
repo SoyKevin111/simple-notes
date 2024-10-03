@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ToastService } from '../../../shared/toasts/toast.service';
+import { ToastComponent } from '../../../shared/toasts/toast/toast.component';
 
 @Component({
   selector: 'card-done',
@@ -9,4 +11,9 @@ import { Component } from '@angular/core';
 })
 export class CardDoneComponent {
 
+  private _toastService = inject(ToastService);
+
+  openToastDel(){
+    this._toastService.open(ToastComponent, {stateToast: true, typeToast: 'deleteTask'});
+  }
 }

@@ -9,6 +9,6 @@ export const dataToast: Toast[] = [
 	{ type: 'exportTxt', data: 'Project saved to Text.', path: 'assets/img/icon/icon-toast-svg/icon-toast-export.svg', primarycolor: '#dcfce7' },
 	{ type: 'exportJson', data: 'Project saved to Json.', path: 'assets/img/icon/icon-toast-svg/icon-toast-export.svg', primarycolor: '#dcfce7' },
 	{ type: 'newTask', data: 'New Task name-card.', path: 'assets/img/icon/icon-toast-svg/icon-toast-export.svg', primarycolor: '' },
-	{ type: 'deleteTask', data: 'name-card has been deleted.', path: 'assets/img/icon/icon-toast-svg/icon-toast-export.svg', primarycolor: '#FEE2E2' },
-	{ type: 'completeTask', data: 'The name-card has been completed.', path: 'assets/img/icon/icon-toast-svg/icon-toast-export.svg', primarycolor: '#FEF3E2' }
+	{ type: 'deleteTask', data: 'name-card has been deleted.', path: 'assets/img/icon/icon-toast-svg/icon-toast-deleted.svg', primarycolor: '#FEE2E2' },
+	{ type: 'completeTask', data: 'The name-card has been completed.', path: 'assets/img/icon/icon-toast-svg/icon-toast-complete.svg', primarycolor: '#FEF3E2' }
 ];
