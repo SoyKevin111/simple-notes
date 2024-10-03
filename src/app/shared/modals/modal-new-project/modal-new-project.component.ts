@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, Input } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ModalService } from '../modal.service';
+import { ToastService } from '../../toasts/toast.service';
+import { ToastComponent } from '../../toasts/toast/toast.component';
 
 @Component({
   selector: 'modal-new-project',
@@ -17,6 +19,7 @@ export class ModalNewProjectComponent {
 
   private _fb = inject(FormBuilder);
   private _modalService = inject(ModalService);
+  private _toastService = inject(ToastService);
 
   constructor() {
     this.newProjectForm = this._fb.group({
@@ -35,6 +38,11 @@ export class ModalNewProjectComponent {
     if (this.newProjectForm.valid) {
       console.log(this.newProjectForm);
       this.closeModal_newProject();
+      this.openToastNewProject();
     }
+  }
+
+  openToastNewProject() {
+    this._toastService.open(ToastComponent, { stateToast: true, typeToast: 'newProject' });
   }
 }
