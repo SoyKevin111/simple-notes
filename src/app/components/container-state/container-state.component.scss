@@ -15,6 +15,7 @@
 
 
 .grid_container--state{
+	@include no-select;
   
 	//!MD
   @include responsive-to('md'){

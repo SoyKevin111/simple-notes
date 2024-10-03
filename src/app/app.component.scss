@@ -67,7 +67,6 @@
     width: #{$xl};
   }
 }
-
 //responsive Left
 @mixin responsive_Left($m-md, $sm, $md, $lg, $xl) {
   @include responsive-to('m-md') {
@@ -112,3 +111,10 @@
   }
 }
 
+
+@mixin no-select {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
