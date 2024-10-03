@@ -15,10 +15,10 @@
 
 	//patron, (distancia padre - 1%) + ancho hijo = 99%
 
-	@include responsive_Left(54%, 64%,74%, 81%, 84%);
+	@include responsive_Left(54%, 64%,74%, 81%, 79%);
 
 	.container_toast--after{
-		@include responsive_width(45%, 35%, 25%, 18%,15%);
+		@include responsive_width(45%, 35%, 25%, 18%,20%);
 	}
 }
 

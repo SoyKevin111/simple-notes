@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ToastService } from '../../../shared/toasts/toast.service';
+import { ToastComponent } from '../../../shared/toasts/toast/toast.component';
 
 @Component({
   selector: 'card-doing',
@@ -8,5 +10,15 @@ import { Component } from '@angular/core';
   styleUrl: './card-doing.component.scss'
 })
 export class CardDoingComponent {
+
+  private _toastService = inject(ToastService);
+
+  finish(){
+    this.openToastfinish();
+  }
+
+  openToastfinish() {
+    this._toastService.open(ToastComponent, { stateToast: true, typeToast: 'completeTask' });
+  }
 
 }

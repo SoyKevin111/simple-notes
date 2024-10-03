@@ -1,7 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, Input } from '@angular/core';
 import { ModalService } from '../modal.service';
-import { FormGroup, ReactiveFormsModule,Validators, FormBuilder } from '@angular/forms';
+import { FormGroup, ReactiveFormsModule, Validators, FormBuilder } from '@angular/forms';
+import { ToastService } from '../../toasts/toast.service';
+import { ToastComponent } from '../../toasts/toast/toast.component';
 
 @Component({
   selector: 'modal-add-card',
@@ -18,6 +20,7 @@ export class ModalAddCardComponent {
 
   @Input() modal_addTaskVisible: boolean = false;
   private _modalService = inject(ModalService);
+  private _toastService = inject(ToastService);
 
   constructor() {
     this.addTaskForm = this._fb.group({
@@ -34,21 +37,26 @@ export class ModalAddCardComponent {
   }
 
   onSubmit(): void {
-    
+
     if (this.addTaskForm.get('state')?.invalid) {
       this.addTaskForm.get('state')?.markAsTouched();
     }
-    
+
     if (this.addTaskForm.valid) {
       this.modal_addTaskVisible = false;
       this._modalService.close();
+      this.openToastAdd();
       // Servicio para agregar la tarjeta
       console.log(`name: ${this.addTaskForm.get('name')?.value} - Description: ${this.addTaskForm.get('description')?.value} - State: ${this.addTaskForm.get('state')?.value}`);
     }
   }
-  
 
-  
-  
+  openToastAdd() {
+    this._toastService.open(ToastComponent, { stateToast: true, typeToast: 'newTask' });
+  }
+
+
+
+
 
 }
