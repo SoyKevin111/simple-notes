@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { ToastService } from '../../shared/toasts/toast.service';
-import { ToastExportProjectComponent } from '../../shared/toasts/toast-export-project/toast-export-project.component';
+import { ToastComponent } from '../../shared/toasts/toast/toast.component';
 
 
 
@@ -55,11 +55,11 @@ export class ProjectMenuComponent implements OnInit {
 
   selectExportText() {
     this.toggleSelectedExport();
-    this._toastService.open(ToastExportProjectComponent,{stateExportToast: true, dataExportToast: 'Project saved to Text.'})
+    this._toastService.open(ToastComponent,{stateToast: true, typeToast: 'exportTxt'})
   }
   selectExportJson() {
     this.toggleSelectedExport();
-    this._toastService.open(ToastExportProjectComponent,{stateExportToast: true, dataExportToast: 'Project saved to Json.'})
+    this._toastService.open(ToastComponent,{stateToast: true, typeToast: 'exportJson'})
   }
 
 
