@@ -2,6 +2,7 @@ import { Component, inject, Input } from '@angular/core';
 import { ListCardStateComponent } from '../list-card-state/list-card-state.component';
 import { ModalAddCardComponent } from "../../shared/modals/modal-add-card/modal-add-card.component";
 import { ModalService } from '../../shared/modals/modal.service';
+import { ModalWarningConfirmationComponent } from '../../shared/modals/modal-warning-confirmation/modal-warning-confirmation.component';
 
 @Component({
   selector: 'app-container-state',
@@ -17,6 +18,11 @@ export class ContainerStateComponent {
   
   openAddCard(){
     this._modalService.open(ModalAddCardComponent,{modal_addTaskVisible:true});
+  }
+
+
+  openModalConfirmation(){
+    this._modalService.open(ModalWarningConfirmationComponent, {modal_confirmationVisible: true})
   }
 
 
