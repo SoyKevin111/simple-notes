@@ -12,7 +12,10 @@
 
 		<ul class="project_content" [ngClass]="{'project_content--active': isSelected}">
 			@for (item of projects; track $index) {
-				<li (click)="itemProjectSelected(item.name)">{{item.name}}</li>
+				<li class="project_content--li" (click)="itemProjectSelected(item.title)">
+					<p>{{item.title}}</p>
+					<popover-info-project [titleProject]="item.title" [descriptionProject]="item.description" />
+				</li>
 			}
 		</ul>
 

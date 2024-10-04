@@ -2,27 +2,23 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { ToastService } from '../../shared/toasts/toast.service';
 import { ToastComponent } from '../../shared/toasts/toast/toast.component';
-
-
-
-
+import { dataProjectMock, ProjectMock } from '../../mocks/projects.mock';
+import { PopoverInfoProjectComponent } from '../../shared/popovers/popover-info-project/popover-info-project.component';
 
 @Component({
   selector: 'app-project-menu',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, PopoverInfoProjectComponent],
   templateUrl: './project-menu.component.html',
   styleUrl: './project-menu.component.scss'
 })
 export class ProjectMenuComponent implements OnInit {
 
+  
   //simulation item project
+  projects:ProjectMock[] = []
 
-  projects = [
-    {name:'My project 1'},
-    {name:'My project 2'},
-    {name:'My project 3'}
-  ]
+
 
   nameItemSelected:string = '';
 
@@ -34,6 +30,7 @@ export class ProjectMenuComponent implements OnInit {
 
   ngOnInit(): void {
       this.nameItemSelected = 'choose your project'
+      this.getProjectsMock();
   }
 
 
@@ -63,5 +60,11 @@ export class ProjectMenuComponent implements OnInit {
   }
 
 
+
+
+  //Prueba de datos falsos
+  getProjectsMock(){
+    this.projects = dataProjectMock
+  }
 
 }

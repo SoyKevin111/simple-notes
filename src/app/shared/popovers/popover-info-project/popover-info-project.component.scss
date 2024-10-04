@@ -1,0 +1,16 @@
+.container_popoverInfoProject{
+  position:relative ;
+}
+
+
+.popoverInfoProject--content {
+  position: absolute;
+  //display: inline-block;
+  top: 170%;
+  left:100%;
+  display: none;
+}
+
+.popoverInfoProject--icon:hover ~ .popoverInfoProject--content{
+  display: inline-block;
+}
