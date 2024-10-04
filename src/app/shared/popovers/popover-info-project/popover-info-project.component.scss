@@ -16,14 +16,13 @@
 }
 
 .popover_info--content {
-  width: 230px;
+  width: 200px;
   position: absolute;
   top: 170%;
   left: 100%;
   display: none;
   background-color: white;
   border: 1px solid #e5e7eb; /* gray-200 */
-  color: #6b7280; /* gray-500 */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: opacity 0.3s ease;
   border-radius: 8px;
