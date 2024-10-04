@@ -94,10 +94,6 @@
 	transition: background-color 0.2s ease;
 	display: flex;
 	align-items: center;
-	//gap: 4.5rem;
-
-	//$m-md(480), $sm(640), $md(860), $lg(1300), $xl(1520)
-	//@include responsive_gap(5rem, 6rem, 5rem, 6rem, 6rem);
 
 	p {
 		font-size: .7rem;

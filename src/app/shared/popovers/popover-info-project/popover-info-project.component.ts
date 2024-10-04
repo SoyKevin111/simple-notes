@@ -11,4 +11,8 @@ export class PopoverInfoProjectComponent {
   @Input() titleProject:string = '';
   @Input() descriptionProject:string = '';
 
+  onClick(event: MouseEvent) {
+    event.stopPropagation(); // Detiene la propagación del evento
+  }
+
 }
