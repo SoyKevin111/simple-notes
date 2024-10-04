@@ -52,6 +52,7 @@
 	flex-direction: column;
 	box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 	display: none;
+
 	@include responsive_width(55%, 40%, 30%, 20%, 20%);
 
 
@@ -86,17 +87,25 @@
 
 }
 
-.project_content--li{
+.project_content--li {
 	padding: 4px 0px 4px 4px;
 	cursor: pointer;
 	border-radius: .3rem;
 	transition: background-color 0.2s ease;
 	display: flex;
 	align-items: center;
-	gap: 6rem;
+	//gap: 4.5rem;
 
-	p{
+	//$m-md(480), $sm(640), $md(860), $lg(1300), $xl(1520)
+	//@include responsive_gap(5rem, 6rem, 5rem, 6rem, 6rem);
+
+	p {
 		font-size: .7rem;
+	}
+
+	popover-info-project{
+		margin-left: auto;
+		padding-right: 1rem;
 	}
 
 	&:hover {
