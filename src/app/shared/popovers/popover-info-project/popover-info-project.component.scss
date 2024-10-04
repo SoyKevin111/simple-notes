@@ -1,3 +1,5 @@
+@use '../../../app.component.scss' as *;
+
 .containerFunction_itemProject {
   display: flex;
   gap: 12px;
@@ -26,6 +28,9 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: opacity 0.3s ease;
   border-radius: 8px;
+
+  //$m-md(480), $sm(640), $md(860), $lg(1300), $xl(1520)
+  @include responsive_width(250px, 300px, 350px,400px,450px);
 }
 
 .popover_info--text {

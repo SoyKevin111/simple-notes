@@ -46,6 +46,7 @@
 
 
 //responsive width
+//$m-md(480), $sm(640), $md(860), $lg(1300), $xl(1520)
 @mixin responsive_width($m-md, $sm, $md, $lg, $xl) {
   @include responsive-to('m-md') {
     width: #{$m-md};
