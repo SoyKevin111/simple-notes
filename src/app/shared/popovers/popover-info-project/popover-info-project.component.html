@@ -1,17 +1,24 @@
-<div class="containerInfoProject--function flex gap-3">
-	<div class="container_popoverInfoProject flex items-center">
-		<!--class=" text-gray-400 hover:text-white" svg>-->
-		<div class="popoverInfoProject--icon h-4 w-4">
-			<img class="w-full h-full" src="assets/img/icon/icon-popover/icon-incognit.svg" alt="">
-		</div>
-		<div class="popoverInfoProject--content w-72 rounded-lg border border-gray-200 bg-white text-sm text-gray-500 shadow-sm transition-opacity duration-300">
-			<div class="space-y-2 p-3">
-				<h3 class="font-semibold text-gray-900">{{titleProject}}</h3>
-				<p>{{descriptionProject}}</p>
-			</div>
-		</div>
-	</div>
-	<div class="icon-edit h-4 w-4 cursor-pointer">
-		<img class="w-full h-full" src="assets/img/icon/icon-popover/icon-edit.svg" alt="icon edit">
-	</div>
+<div class="containerFunction_itemProject">
+  <div class="popover_info">
+    <div (click)="onClick($event)" class="icon-popover">
+      <img src="assets/img/icon/icon-popover/icon-incognit.svg" alt="icon popover" />
+    </div>
+    <div class="popover_info--content">
+      <div class="popover_info--text">
+        <h3>{{titleProject}}</h3>
+        <p>{{descriptionProject}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="popover_edit">
+    <div (click)="onClick($event)" class="icon-edit">
+      <img src="assets/img/icon/icon-popover/icon-edit.svg" alt="edit icon" />
+    </div>
+    <div class="popover_edit--content">
+      <p>edit</p>
+    </div>
+  </div>
 </div>
+
+

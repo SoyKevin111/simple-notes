@@ -1,16 +1,67 @@
-.container_popoverInfoProject{
-  position:relative ;
+.containerFunction_itemProject {
+  display: flex;
+  gap: 12px;
 }
 
+.popover_info {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
 
-.popoverInfoProject--content {
+.icon-popover {
+  height: 16px;
+  width: 16px;
+  cursor: pointer;
+}
+
+.popover_info--content {
+  width: 230px;
   position: absolute;
-  //display: inline-block;
   top: 170%;
-  left:100%;
+  left: 100%;
   display: none;
+  background-color: white;
+  border: 1px solid #e5e7eb; /* gray-200 */
+  color: #6b7280; /* gray-500 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease;
+  border-radius: 8px;
 }
 
-.popoverInfoProject--icon:hover ~ .popoverInfoProject--content{
-  display: inline-block;
+.popover_info--text {
+  padding: 12px;
+  color: #111827; /* gray-900 */
+}
+
+.popover_info:hover .popover_info--content {
+  display: block;
+}
+
+.popover_edit {
+  position: relative;
+}
+
+.icon-edit {
+  height: 16px;
+  width: 16px;
+  cursor: pointer;
+}
+
+.popover_edit--content {
+  position: absolute;
+  top: 50%;
+  left: 130%;
+  transform: translateY(-50%);
+  display: none;
+  padding: 6px 18px;
+  background-color: #1f2937; 
+  color: white;
+  border-radius: 8px;
+  white-space: nowrap;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.popover_edit:hover .popover_edit--content {
+  display: block;
 }
