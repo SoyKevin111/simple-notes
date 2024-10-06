@@ -1,0 +1,34 @@
+<div class="viewTaskContainer">
+	<div 
+		[ngClass]="{'fullScreenWindows': fullScreen, 'noteWindow':!fullScreen}"
+		class="noteWindow">
+		<div class="note-header">
+			<div class="note-header--left">
+				<img src="#" alt="">
+				<p>Task</p>
+			</div>
+			<div class="note-header--right">
+				<div
+					(click)="closeModalViewTask()"
+					class="icon-windowTask minin">‒</div>
+				<div
+					(click)="activateFullScreen()"
+					class="icon-windowTask maxim">☐</div>
+				<div
+					(click)="closeModalViewTask()"
+					class="icon-windowTask close">⨉</div>
+			</div>
+		</div>
+		<div class="note-box">
+			<h1 class="note-title">{{task.name}}</h1>
+			<h1 class="w-[90%] mx-auto">State: <span>{{task.state}}</span></h1>
+			<div class="note-body">
+				<div class="note-body--content" contenteditable="true">
+					<p>{{task.description}}</p>
+				</div>
+				<button class="save-note">Save</button>
+			</div>
+		</div>
+	</div>
+
+</div>

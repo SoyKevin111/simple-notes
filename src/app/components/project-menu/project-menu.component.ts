@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { ToastService } from '../../shared/toasts/toast.service';
 import { ToastComponent } from '../../shared/toasts/toast/toast.component';
-import { dataProjectMock, ProjectMock } from '../../mocks/projects.mock';
+import { dataProjectMock, ProjectMock, TaskMock } from '../../mocks/projects.mock';
 import { PopoverInfoProjectComponent } from '../../shared/popovers/popover-info-project/popover-info-project.component';
 
 @Component({
@@ -14,13 +14,17 @@ import { PopoverInfoProjectComponent } from '../../shared/popovers/popover-info-
 })
 export class ProjectMenuComponent implements OnInit {
 
-  
+
   //simulation item project
-  projects:ProjectMock[] = []
+  projects: ProjectMock[] = dataProjectMock;
+
+  //servicio mock
 
 
 
-  nameItemSelected:string = '';
+  nameItemSelected: string = '';
+  idItemSelected: string = '';
+
 
   //servicio
   private _toastService = inject(ToastService);
@@ -29,8 +33,7 @@ export class ProjectMenuComponent implements OnInit {
   isSelectedExport: boolean = false;
 
   ngOnInit(): void {
-      this.nameItemSelected = 'choose your project'
-      this.getProjectsMock();
+    this.nameItemSelected = 'choose your project'
   }
 
 
@@ -40,8 +43,9 @@ export class ProjectMenuComponent implements OnInit {
 
   }
 
-  itemProjectSelected(item:string){
-    this.nameItemSelected = item;
+  itemProjectSelected(name: string, id: string) {
+    this.nameItemSelected = name;
+    this.idItemSelected = id;
     this.toggleSelectedProject(); //close selected project
   }
 
@@ -52,19 +56,13 @@ export class ProjectMenuComponent implements OnInit {
 
   selectExportText() {
     this.toggleSelectedExport();
-    this._toastService.open(ToastComponent,{stateToast: true, typeToast: 'exportTxt'})
+    this._toastService.open(ToastComponent, { stateToast: true, typeToast: 'exportTxt' })
   }
   selectExportJson() {
     this.toggleSelectedExport();
-    this._toastService.open(ToastComponent,{stateToast: true, typeToast: 'exportJson'})
+    this._toastService.open(ToastComponent, { stateToast: true, typeToast: 'exportJson' })
   }
 
 
-
-
-  //Prueba de datos falsos
-  getProjectsMock(){
-    this.projects = dataProjectMock
-  }
 
 }
