@@ -1,7 +1,6 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, inject} from '@angular/core';
 import { ModalService } from '../../../shared/modals/modal.service';
 import { ModalViewTaskComponent } from '../../../shared/modals/modal-view-task/modal-view-task.component';
-import { TaskMock } from '../../../mocks/projects.mock';
  
 @Component({
   selector: 'card-todo',
@@ -12,9 +11,11 @@ import { TaskMock } from '../../../mocks/projects.mock';
 })
 export class CardTodoComponent{
 
-
+  //service
   private _modalService = inject(ModalService);
 
+
+  //Métodos
 
   openModalViewTask() {
     this._modalService.open(

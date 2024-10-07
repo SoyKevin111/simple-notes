@@ -1,7 +1,6 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ToastService } from '../../../shared/toasts/toast.service';
 import { ToastComponent } from '../../../shared/toasts/toast/toast.component';
-import { TaskMock } from '../../../mocks/projects.mock';
 
 @Component({
   selector: 'card-doing',
@@ -12,8 +11,11 @@ import { TaskMock } from '../../../mocks/projects.mock';
 })
 export class CardDoingComponent {
 
-
+  //service
   private _toastService = inject(ToastService);
+
+
+  //Métodos
 
   finish() {
     this.openToastfinish();

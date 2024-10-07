@@ -1,8 +1,7 @@
-import { Component, inject, Input, OnInit } from '@angular/core';
+import { Component, inject, Input} from '@angular/core';
 import { ModalService } from '../modal.service';
 import { CommonModule } from '@angular/common';
-import {TaskMock } from '../../../mocks/projects.mock';
-
+import { TaskMock } from '../../../models/task.model';
 @Component({
   selector: 'app-modal-view-task',
   standalone: true,

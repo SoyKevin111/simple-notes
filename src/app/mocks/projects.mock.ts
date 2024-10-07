@@ -1,18 +1,7 @@
-export interface ProjectMock {
-	id: string;
-	title: string;
-	description: string;
-	tasks?: TaskMock[];
-}
+import { ProjectMock } from "../models/project.model";
 
-export interface TaskMock {
-	id: string;
-	name: string;
-	description: string;
-	state: string;
-}
 
-export const dataProjectMock: ProjectMock[] = [
+export const projectsDefault: ProjectMock[] = [
 	{
 		id: '1',
 		title: 'Project 1',

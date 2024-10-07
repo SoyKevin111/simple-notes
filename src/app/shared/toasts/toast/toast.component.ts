@@ -15,16 +15,17 @@ export class ToastComponent implements OnInit {
   //servicio
   private _toastService = inject(ToastService);
 
-  @Input() stateToast: boolean = false; //se activara
 
+  //Inputs
+  @Input() stateToast: boolean = false; //se activara
   @Input() typeToast: string = ''; //add, delete, exportJson, exportText
 
+  //
   dataToast:string = '';
   pathToast:string = '';
   primaryColor:string = '';
-  
-
   fadingOut: boolean = false;
+
 
   //referencia
   toastRef!:ComponentRef<ToastComponent>;
@@ -45,6 +46,9 @@ export class ToastComponent implements OnInit {
     }
   }
 
+
+
+  //métodos
   asignToast(){
     //asignando el dato
     const toastItem = dataToast.find(toast => toast.type == this.typeToast);

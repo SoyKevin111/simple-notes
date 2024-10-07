@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ModalService } from '../../shared/modals/modal.service';
 import { ModalNewProjectComponent } from '../../shared/modals/modal-new-project/modal-new-project.component';
 import { ModalSearchComponent } from '../../shared/modals/modal-search/modal-search.component';
@@ -12,8 +12,11 @@ import { ModalSearchComponent } from '../../shared/modals/modal-search/modal-sea
 })
 export class NavbarComponent {
 
-  //servicio modal new project
+  //servicio
   private _modalService = inject(ModalService);
+
+
+  //Métodos
 
   openModalNewProject() {
     this._modalService.open(ModalNewProjectComponent, { modal_newProjectVisible: true });

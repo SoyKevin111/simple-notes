@@ -3,7 +3,7 @@ import { ListCardStateComponent } from '../list-card-state/list-card-state.compo
 import { ModalAddCardComponent } from "../../shared/modals/modal-add-card/modal-add-card.component";
 import { ModalService } from '../../shared/modals/modal.service';
 import { ModalWarningConfirmationComponent } from '../../shared/modals/modal-warning-confirmation/modal-warning-confirmation.component';
-import { TaskMock } from '../../mocks/projects.mock';
+
 
 @Component({
   selector: 'app-container-state',
@@ -14,17 +14,15 @@ import { TaskMock } from '../../mocks/projects.mock';
 })
 export class ContainerStateComponent {
 
-  //servicio para invocar al modal:
+  //servicio
   private _modalService = inject(ModalService);
 
-  Tasks: TaskMock[] = [];
 
-
+  //Métodos
 
   openAddCard() {
     this._modalService.open(ModalAddCardComponent, { modal_addTaskVisible: true });
   }
-
 
   openModalConfirmation() {
     this._modalService.open(ModalWarningConfirmationComponent, { modal_confirmationVisible: true })

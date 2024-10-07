@@ -13,13 +13,18 @@ import { ToastComponent } from '../../toasts/toast/toast.component';
   styleUrl: './modal-new-project.component.scss'
 })
 export class ModalNewProjectComponent {
+  
+  //Formulario reactivo
+  newProjectForm: FormGroup;
+  private _fb = inject(FormBuilder);
+  
+  //Inputs
   @Input() modal_newProjectVisible: boolean = false;
 
-  newProjectForm: FormGroup;
-
-  private _fb = inject(FormBuilder);
+  //Servicio
   private _modalService = inject(ModalService);
   private _toastService = inject(ToastService);
+
 
   constructor() {
     this.newProjectForm = this._fb.group({
@@ -27,6 +32,9 @@ export class ModalNewProjectComponent {
       description: ['', [Validators.required]]
     })
   }
+
+  
+  //Métodos
 
   closeModal_newProject() {
     this.modal_newProjectVisible = false;
