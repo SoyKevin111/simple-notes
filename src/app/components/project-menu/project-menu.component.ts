@@ -32,11 +32,17 @@ export class ProjectMenuComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.nameItemSelected = 'choose your project'
     //asignando datos por default
     this._manageProjectService.getProjects().subscribe(p => {
       this.projects = p;
-    })
+      if (this.projects.length > 0) {
+        this.nameItemSelected = 'choose your project!'
+      }
+      else {
+        this.nameItemSelected = 'create new project!'
+      }
+    });
+
   }
 
 

@@ -1,4 +1,14 @@
 <div class="containerFunction_itemProject">
+
+  <div class="popover_deleteProject">
+    <div (click)="onClick($event)" (click)="deleteProject()"
+      class="icon-delete">
+      <img src="assets/img/btn/btn-delete.png" alt="">
+    </div>
+    <div class="popover_remove--content">
+      <p>remove</p>
+    </div>
+  </div>
   <div class="popover_info">
     <div (click)="onClick($event)" class="icon-popover">
       <img src="assets/img/icon/icon-popover/icon-incognit.svg" alt="icon popover" />

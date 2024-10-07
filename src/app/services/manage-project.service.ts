@@ -38,7 +38,7 @@ export class ManageProjectService {
 
   //DEL 
   deleteProject(id: string): void {
-    const updatedProjects = this.projectsSubject.getValue().filter(p => p.id === id);
+    const updatedProjects = this.projectsSubject.getValue().filter(p => p.id !== id);
     this.projectsSubject.next(updatedProjects);
   }
 
