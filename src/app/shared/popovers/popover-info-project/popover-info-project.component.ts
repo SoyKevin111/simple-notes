@@ -1,5 +1,7 @@
 import { Component, inject, Input } from '@angular/core';
 import { ManageProjectService } from '../../../services/manage-project.service';
+import { ModalService } from '../../modals/modal.service';
+import { ModalEditProjectComponent } from '../../modals/modal-edit-project/modal-edit-project.component';
 
 @Component({
   selector: 'popover-info-project',
@@ -12,11 +14,12 @@ export class PopoverInfoProjectComponent {
 
   //Servicio
   private _manageProjectService = inject(ManageProjectService);
+  private _modalService = inject(ModalService); //enviar id al modal
 
   //Inputs
-  @Input() titleProject:string = '';
-  @Input() descriptionProject:string = '';
-  @Input() idProject:string = '';
+  @Input() titleProject: string = '';
+  @Input() descriptionProject: string = '';
+  @Input() idProject: string = '';
 
   //Métodos
   onClick(event: MouseEvent) {
@@ -24,8 +27,12 @@ export class PopoverInfoProjectComponent {
   }
 
   //Delete Project
-  deleteProject(){
+  deleteProject() {
     this._manageProjectService.deleteProject(this.idProject);
+  }
+
+  openModal_editProject() {
+    this._modalService.open(ModalEditProjectComponent, { modal_editProjectVisible: true, idProject: this.idProject });
   }
 
 }

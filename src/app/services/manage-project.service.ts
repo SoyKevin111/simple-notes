@@ -43,8 +43,10 @@ export class ManageProjectService {
   }
 
   //SET
-  editProject(id: string) {
-    const updatedProjects = this.projectsSubject.getValue().filter(p => p.id === id);
+  editProject(projectModified: Project): void {
+    const updatedProjects = this.projectsSubject.getValue().map(p =>
+      p.id === projectModified.id ? projectModified : p
+    )
     this.projectsSubject.next(updatedProjects);
   }
 
