@@ -8,28 +8,29 @@
 	overflow-y
 	overflow-x-hidden
 	custom-scrollbar
-	"
-	[ngClass]="cardState === 'doing' ? 'gap-[1rem]': '' "	>
+	" [ngClass]="cardState === 'doing' ? 'gap-[1rem]': '' ">
 	<!--!CARD-->
 	@if(cardState === 'todo'){
-		<card-todo class="card--todo w-full h-full" />
-		<card-todo class="card--todo w-full h-full" />
-		<card-todo class="card--todo w-full h-full" />
-		<card-todo class="card--todo w-full h-full" />
-		<card-todo class="card--todo w-full h-full" />
-	}@else if(cardState === 'doing'){
-		<card-doing class="card--todo w-full h-full" />
-		<card-doing class="card--todo w-full h-full" />
-		<card-doing class="card--todo w-full h-full" />
-		<card-doing class="card--todo w-full h-full" />
-		<card-doing class="card--todo w-full h-full" />
-	} @else if(cardState === 'done'){
-		<card-done class="card--todo w-full h-full" />
-		<card-done class="card--todo w-full h-full" />
-		<card-done class="card--todo w-full h-full" />
-		<card-done class="card--todo w-full h-full" />
-		<card-done class="card--todo w-full h-full" />
+	<card-todo class="card--todo w-full h-full" />
+	<card-todo class="card--todo w-full h-full" />
+	<card-todo class="card--todo w-full h-full" />
+	<card-todo class="card--todo w-full h-full" />
+	<card-todo class="card--todo w-full h-full" />
 	}
-	
+	@if(cardState === 'doing'){
+	<card-doing class="card--doing w-full h-full" />
+	<card-doing class="card--doing w-full h-full" />
+	<card-doing class="card--doing w-full h-full" />
+	<card-doing class="card--doing w-full h-full" />
+	<card-doing class="card--doing w-full h-full" />
+	}
+	@if(cardState === 'done'){
+	<card-done class="card--done w-full h-full" />
+	<card-done class="card--done w-full h-full" />
+	<card-done class="card--done w-full h-full" />
+	<card-done class="card--done w-full h-full" />
+	<card-done class="card--done w-full h-full" />
+	}
+
 
 </ul>

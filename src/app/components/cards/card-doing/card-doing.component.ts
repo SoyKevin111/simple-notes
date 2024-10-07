@@ -11,9 +11,13 @@ import { ToastComponent } from '../../../shared/toasts/toast/toast.component';
 })
 export class CardDoingComponent {
 
+  //service
   private _toastService = inject(ToastService);
 
-  finish(){
+
+  //Métodos
+
+  finish() {
     this.openToastfinish();
   }
 

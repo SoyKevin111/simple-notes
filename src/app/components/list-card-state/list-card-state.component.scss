@@ -1,23 +1,23 @@
-/* Personalización para navegadores Webkit (Chrome, Edge, Safari) */
+/* Personalización para navegadores Webkit (Chrome, Edge, Safari)  EN SCROLL*/
 .custom-scrollbar::-webkit-scrollbar {
-  width: 8px; /* Ajusta el grosor del scrollbar aquí */
+  width: 8px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: rgba(136, 136, 136, 0.9); /* Color del pulgar del scrollbar (semi-transparente) */
-  border-radius: 2px; /* Bordes redondeados del pulgar */
+  background-color: rgba(136, 136, 136, 0.9);
+  border-radius: 2px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(85, 85, 85, 0.9); /* Color del pulgar cuando se pasa el cursor sobre él (semi-transparente) */
+  background-color: rgba(85, 85, 85, 0.9);
 }
 
 /* Personalización para Firefox */
 .custom-scrollbar {
-  scrollbar-width: thin; /* Controla el grosor del scrollbar */
-  scrollbar-color: rgba(136, 136, 136, 0.5) transparent; /* Color del pulgar y del fondo del scrollbar (semi-transparente) */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(136, 136, 136, 0.5) transparent;
 }
 
 .custom-scrollbar:hover {
-  scrollbar-color: rgba(85, 85, 85, 0.5) transparent; /* Color del pulgar cuando se pasa el cursor sobre él (semi-transparente) */
+  scrollbar-color: rgba(85, 85, 85, 0.5) transparent;
 }

@@ -1,8 +1,13 @@
 @use '../../app.component.scss' as *;
 
+//! MOBILE BASE
+
 .container_state{
 	background-color: #343A40;
 }
+
+
+//!Contenido Responsive.
 
 .container_state {
 	@include responsive-to('lg'){
@@ -12,7 +17,6 @@
 		height: 450px;
 	}
 }
-
 
 .grid_container--state{
 	@include no-select;
@@ -71,8 +75,5 @@
 			grid-row: 1;
 		}
 	}
-
-
-
 
 } 

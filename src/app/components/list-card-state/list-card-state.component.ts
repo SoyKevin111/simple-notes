@@ -13,7 +13,7 @@ import { NgClass } from '@angular/common';
 })
 export class ListCardStateComponent {
   
-  @Input() cardState:string = '';
-  
+  //Inputs
+  @Input() cardState: string = '';
 
 }

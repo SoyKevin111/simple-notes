@@ -11,9 +11,15 @@ import { CommonModule } from '@angular/common';
 })
 export class ModalWarningConfirmationComponent {
 
+  //Inputs
   @Input() modal_confirmationVisible:boolean = false;
+
+  //Servicio
   private _modalService = inject(ModalService);
 
+
+  //Métodos
+  
   closeModalConfirmation(){
     this.modal_confirmationVisible = false
     this._modalService.close();

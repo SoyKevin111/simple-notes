@@ -29,6 +29,7 @@ export class ModalService {
     this._appRef.attachView(this.modalRef.hostView);
     const domElem = (this.modalRef.hostView as any).rootNodes[0] as HTMLElement;
     document.body.appendChild(domElem);
+    document.body.style.overflow = 'hidden';
 
     return this.modalRef;
   }
@@ -36,6 +37,7 @@ export class ModalService {
   close(): void {
     if (this.modalRef) {
       this._appRef.detachView(this.modalRef.hostView);
+      document.body.style.overflow = '';
       this.modalRef.destroy();
       this.modalRef = null;
     }

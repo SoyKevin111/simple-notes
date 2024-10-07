@@ -1,11 +1,14 @@
 @use '../../app.component.scss' as *;
 
-//GLobales
+//! Mobile Base
+
+//GLobal
 .container_nav {
 	@include no-select;
 	background-color: #343A40;
 }
 
+//prueba
 /* .container_nav--first {
 	border-left: 1px solid white;
 }
@@ -22,7 +25,9 @@
 	display: none;
 }
 
-//Encendido
+//! Responsive
+
+//input serach encendido
 
 .container_nav--first {
 

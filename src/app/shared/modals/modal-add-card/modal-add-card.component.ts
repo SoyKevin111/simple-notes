@@ -18,9 +18,13 @@ export class ModalAddCardComponent {
   addTaskForm: FormGroup;
   private _fb = inject(FormBuilder);
 
+  //Inputs
   @Input() modal_addTaskVisible: boolean = false;
+
+  //Servicio
   private _modalService = inject(ModalService);
   private _toastService = inject(ToastService);
+
 
   constructor() {
     this.addTaskForm = this._fb.group({
@@ -30,6 +34,8 @@ export class ModalAddCardComponent {
     })
   }
 
+
+  //Métodos
 
   closeModal_addTask() {
     this.modal_addTaskVisible = false;

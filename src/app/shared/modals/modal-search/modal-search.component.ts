@@ -13,10 +13,14 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 })
 export class ModalSearchComponent {
 
+  //Inputs
   @Input() modal_SearchVisible:boolean = false;
-  private _modalService =  inject(ModalService);
-  private _fb = inject(FormBuilder)
 
+  //Servicio
+  private _modalService =  inject(ModalService);
+
+  //Formulario reactivo
+  private _fb = inject(FormBuilder)
   searchForm:FormGroup;
 
   constructor(){
@@ -24,6 +28,9 @@ export class ModalSearchComponent {
       prompt: ['', [Validators.required]]
     })
   }
+
+  
+  //Métodos
   
   closeModalSearch(){
     this.modal_SearchVisible = false;

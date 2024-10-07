@@ -1,6 +1,6 @@
 @use '../../app.component.scss' as *;
 
-//!DESIGN MOBILE
+//!DESIGN MOBILE + RESPONSIVE
 
 //!Contenedor Padre
 .container_projectMenu {
@@ -42,7 +42,7 @@
 
 
 .project_content {
-	z-index: 200;
+	z-index: 100;
 	background-color: #343A40;
 	border: 1px solid white;
 	width: 75%;
@@ -135,7 +135,7 @@
 
 
 .content_optionsProject {
-	z-index: 210;
+	z-index: 110;
 	position: absolute;
 	top: 110%;
 	width: 110%;
