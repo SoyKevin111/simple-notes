@@ -57,7 +57,7 @@ export class ModalNewProjectComponent {
   //add
   addProject(): Project | undefined {
     const project: Project = { //por si es null o undefined
-      id: this.newProjectForm.get('id')?.value ?? '',
+      id: this._manageProjectService.getUniqueProjectId(),
       title: this.newProjectForm.get('title')?.value ?? '',
       description: this.newProjectForm.get('description')?.value ?? '',
       tasks: []

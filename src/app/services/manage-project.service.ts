@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { projectsDefault } from '../mocks/projects.mock';
-import { BehaviorSubject, map, Observable } from 'rxjs';
+import { BehaviorSubject, map, max, Observable } from 'rxjs';
 import { Project } from '../models/project.model';
 
 @Injectable({
@@ -48,5 +48,26 @@ export class ManageProjectService {
     this.projectsSubject.next(updatedProjects);
   }
 
+  //Generate ID
+  getUniqueProjectId(): string {
+    const projects = this.projectsSubject.getValue();
+
+    if (projects.length === 0) {
+      return '1';
+    }
+
+    let newId = 1; //inicial
+    const existingIds = projects.map(project => parseInt(project.id, 10));//base 10
+    const maxId = Math.max(...existingIds);//guardar el mayor valor
+
+    newId = maxId + 1;
+
+    while (existingIds.includes(newId)) {
+      newId++
+    }
+
+
+    return newId.toString();
+  }
 
 }

@@ -19,11 +19,11 @@ export class ToastComponent implements OnInit {
   //Inputs
   @Input() stateToast: boolean = false; //se activara
   @Input() typeToast: string = ''; //add, delete, exportJson, exportText
-  @Input() entityTitle: string = ''
+  @Input() entityTitle: string = '' //valor del nombre del nuevo Proyecto.
   //
-  dataToast: string = '';
-  pathToast: string = '';
-  primaryColor: string = '';
+  dataToast: string = ''; //valor por defecto del mock
+  pathToast: string = ''; //valor por defecto del mock
+  primaryColor: string = ''; //valor por defecto del mock
   fadingOut: boolean = false;
 
 
@@ -53,7 +53,7 @@ export class ToastComponent implements OnInit {
     //asignando el dato
     const toastItem = dataToast.find(toast => toast.type == this.typeToast);
     if (toastItem) {
-      this.dataToast = `${toastItem.data}${this.entityTitle}`;
+      this.dataToast = toastItem.data;
       this.pathToast = toastItem.path;
       this.primaryColor = toastItem.primarycolor;
     }
