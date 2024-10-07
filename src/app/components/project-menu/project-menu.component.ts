@@ -4,7 +4,8 @@ import { ToastService } from '../../shared/toasts/toast.service';
 import { ToastComponent } from '../../shared/toasts/toast/toast.component';
 import { PopoverInfoProjectComponent } from '../../shared/popovers/popover-info-project/popover-info-project.component';
 import { projectsDefault } from '../../mocks/projects.mock';
-import { ProjectMock} from '../../models/project.model';
+import { Project } from '../../models/project.model';
+import { ManageProjectService } from '../../services/manage-project.service';
 
 @Component({
   selector: 'app-project-menu',
@@ -16,10 +17,11 @@ import { ProjectMock} from '../../models/project.model';
 export class ProjectMenuComponent implements OnInit {
 
   //uso
-  projects: ProjectMock[] = projectsDefault;
+  projects: Project[] = [];
 
   //servicio
   private _toastService = inject(ToastService);
+  private _manageProjectService = inject(ManageProjectService);
 
   //
   isSelected: boolean = false;
@@ -31,6 +33,10 @@ export class ProjectMenuComponent implements OnInit {
 
   ngOnInit(): void {
     this.nameItemSelected = 'choose your project'
+    //asignando datos por default
+    this._manageProjectService.getProjects().subscribe(p => {
+      this.projects = p;
+    })
   }
 
 

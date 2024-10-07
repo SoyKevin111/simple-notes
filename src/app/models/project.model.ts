@@ -1,8 +1,8 @@
-import { TaskMock } from "./task.model";
+import { Task } from "./task.model";
 
-export interface ProjectMock {
+export interface Project {
 	id: string;
 	title: string;
 	description: string;
-	tasks?: TaskMock[];
+	tasks: Task[];
 }
