@@ -1,7 +1,7 @@
 import { Component, inject, Input} from '@angular/core';
 import { ModalService } from '../modal.service';
 import { CommonModule } from '@angular/common';
-import { TaskMock } from '../../../models/task.model';
+import { Task } from '../../../models/task.model';
 @Component({
   selector: 'app-modal-view-task',
   standalone: true,
@@ -11,7 +11,7 @@ import { TaskMock } from '../../../models/task.model';
 })
 export class ModalViewTaskComponent {
 
-  @Input() task!:TaskMock;
+  @Input() task!:Task;
 
   fullScreen: boolean = false;
   private _modalService = inject(ModalService);

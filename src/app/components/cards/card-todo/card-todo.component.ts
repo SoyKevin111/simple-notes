@@ -14,7 +14,6 @@ export class CardTodoComponent{
   //service
   private _modalService = inject(ModalService);
 
-
   //Métodos
 
   openModalViewTask() {

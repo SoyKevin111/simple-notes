@@ -1,7 +1,7 @@
-import { ProjectMock } from "../models/project.model";
+import {  Project} from "../models/project.model";
 
 
-export const projectsDefault: ProjectMock[] = [
+export const projectsDefault: Project[] = [
 	{
 		id: '1',
 		title: 'Project 1',

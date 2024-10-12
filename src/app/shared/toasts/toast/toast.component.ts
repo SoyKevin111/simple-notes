@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, ComponentRef, inject, Input, OnInit} from '@angular/core';
+import { Component, ComponentRef, inject, Input, OnInit } from '@angular/core';
 import { ToastService } from '../toast.service';
-import {dataToast} from '../mocks/toast.mock';
+import { dataToast } from '../mocks/toast.mock';
 
 @Component({
   selector: 'toast-export-project',
@@ -19,28 +19,28 @@ export class ToastComponent implements OnInit {
   //Inputs
   @Input() stateToast: boolean = false; //se activara
   @Input() typeToast: string = ''; //add, delete, exportJson, exportText
-
+  @Input() entityTitle: string = '' //valor del nombre del nuevo Proyecto.
   //
-  dataToast:string = '';
-  pathToast:string = '';
-  primaryColor:string = '';
+  dataToast: string = ''; //valor por defecto del mock
+  pathToast: string = ''; //valor por defecto del mock
+  primaryColor: string = ''; //valor por defecto del mock
   fadingOut: boolean = false;
 
 
   //referencia
-  toastRef!:ComponentRef<ToastComponent>;
+  toastRef!: ComponentRef<ToastComponent>;
 
   ngOnInit(): void {
 
-    if(this.typeToast){
+    if (this.typeToast) {
       this.asignToast();
     }
-    else{
+    else {
       console.log('Asigna un type.');
     }
 
-    if(this.stateToast){
-      setTimeout(()=>{
+    if (this.stateToast) {
+      setTimeout(() => {
         this.startFadingOut();
       }, 1500)
     }
@@ -49,10 +49,10 @@ export class ToastComponent implements OnInit {
 
 
   //métodos
-  asignToast(){
+  asignToast() {
     //asignando el dato
     const toastItem = dataToast.find(toast => toast.type == this.typeToast);
-    if(toastItem){
+    if (toastItem) {
       this.dataToast = toastItem.data;
       this.pathToast = toastItem.path;
       this.primaryColor = toastItem.primarycolor;
@@ -67,7 +67,7 @@ export class ToastComponent implements OnInit {
     }, 1000);
   }
 
-  closeToast() {    
+  closeToast() {
     this.stateToast = this.stateToast = false; //de true a false
     this._toastService.close(this.toastRef);
   }

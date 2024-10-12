@@ -14,7 +14,7 @@
 			@for (item of projects; track $index) {
 				<li class="project_content--li" (click)="itemProjectSelected(item.title, item.id)">
 					<p>{{item.title}}</p>
-					<popover-info-project [titleProject]="item.title" [descriptionProject]="item.description" />
+					<popover-info-project [titleProject]="item.title" [descriptionProject]="item.description" [idProject]="item.id" />
 				</li>
 			}
 		</ul>

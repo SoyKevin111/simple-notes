@@ -5,7 +5,40 @@
   gap: 12px;
 }
 
+//DELETE
+.popover_deleteProject{
+  z-index: 150;
+  position: relative;
+}
+
+.icon-delete{
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.popover_remove--content {
+  position: absolute;
+  top: 50%;
+  left: 130%;
+  transform: translateY(-50%);
+  display: none;
+  padding: 6px 18px;
+  background-color: #1f2937; 
+  color: white;
+  border-radius: 8px;
+  white-space: nowrap;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.popover_deleteProject:hover .popover_remove--content {
+  display: block;
+}
+
+
+//INFO
 .popover_info {
+  z-index: 120;
   display: flex;
   align-items: center;
   position: relative;
@@ -42,7 +75,10 @@
   display: block;
 }
 
+
+//EDIT  
 .popover_edit {
+  z-index: 140;
   position: relative;
 }
 
