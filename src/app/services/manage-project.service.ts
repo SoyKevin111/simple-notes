@@ -11,12 +11,6 @@ export class ManageProjectService {
   private projectsSubject = new BehaviorSubject<Project[]>(projectsDefault || []);
   projects$: Observable<Project[]> = this.projectsSubject.asObservable();
 
-  constructor() {
-    this.projectsSubject.subscribe(p => {
-      console.log(p);
-
-    })
-  }
 
   //solo de lectura
   getProjects(): Observable<Project[]> {

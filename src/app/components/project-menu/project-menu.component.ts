@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { ToastService } from '../../shared/toasts/toast.service';
 import { ToastComponent } from '../../shared/toasts/toast/toast.component';
 import { PopoverInfoProjectComponent } from '../../shared/popovers/popover-info-project/popover-info-project.component';
 import { projectsDefault } from '../../mocks/projects.mock';
 import { Project } from '../../models/project.model';
 import { ManageProjectService } from '../../services/manage-project.service';
+import { pipe, Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-project-menu',
@@ -14,7 +15,9 @@ import { ManageProjectService } from '../../services/manage-project.service';
   templateUrl: './project-menu.component.html',
   styleUrl: './project-menu.component.scss'
 })
-export class ProjectMenuComponent implements OnInit {
+export class ProjectMenuComponent implements OnInit, OnDestroy {
+
+  private destroy$ = new Subject<void>();
 
   //uso
   projects: Project[] = [];
@@ -33,22 +36,22 @@ export class ProjectMenuComponent implements OnInit {
 
   ngOnInit(): void {
     //asignando datos por default
-    this._manageProjectService.getProjects().subscribe(p => {
-      this.projects = p;
-      if (this.projects.length > 0) {
-        this.nameItemSelected = 'choose your project!'
-      }
-      else {
-        this.nameItemSelected = 'create new project!'
-      }
-    });
-
+    this._manageProjectService.getProjects()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(p => {
+        this.projects = p;
+        if (this.projects.length > 0) {
+          this.nameItemSelected = 'choose your project!'
+        }
+        else {
+          this.nameItemSelected = 'create new project!'
+        }
+      });
   }
-
 
   //?Selected Project
   toggleSelectedProject() {
-    this.isSelected = !this.isSelected; //close selected project
+    this.isSelected = !this.isSelected; 
 
   }
 
@@ -56,7 +59,7 @@ export class ProjectMenuComponent implements OnInit {
   itemProjectSelected(name: string, id: string) {
     this.nameItemSelected = name;
     this.idItemSelected = id;
-    this.toggleSelectedProject(); //close selected project
+    this.toggleSelectedProject(); //toggle selected project.
   }
 
   //?Selected Export Project
@@ -76,5 +79,10 @@ export class ProjectMenuComponent implements OnInit {
   }
 
 
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.unsubscribe();
+  }
 
 }
