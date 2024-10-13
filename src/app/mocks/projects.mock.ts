@@ -25,7 +25,8 @@ export const projectsDefault: Project[] = [
 				description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut ex in sapien luctus ultricies sit amet eget tortor. Integer id mattis mi. Pellentesque gravida dapibus mauris sit amet mollis. Aliquam ac vulputate augue. Praesent interdum volutpat sapien, vel rutrum urna placerat et. In hendrerit arcu est, a molestie dolor pulvinar',
 				state: 'Done'
 			}
-		]
+		],
+		selected: false
 	},
 	{
 		id: '2',
@@ -50,7 +51,8 @@ export const projectsDefault: Project[] = [
 				description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut ex in sapien luctus ultricies sit amet eget tortor. Integer id mattis mi. Pellentesque gravida dapibus mauris sit amet mollis. Aliquam ac vulputate augue. Praesent interdum volutpat sapien, vel rutrum urna placerat et. In hendrerit arcu est, a molestie dolor pulvinar',
 				state: 'Done'
 			}
-		]
+		],
+		selected: false
 	},
 	{
 		id: '3',
@@ -75,6 +77,7 @@ export const projectsDefault: Project[] = [
 				description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut ex in sapien luctus ultricies sit amet eget tortor. Integer id mattis mi. Pellentesque gravida dapibus mauris sit amet mollis. Aliquam ac vulputate augue. Praesent interdum volutpat sapien, vel rutrum urna placerat et. In hendrerit arcu est, a molestie dolor pulvinar',
 				state: 'Done'
 			}
-		]
+		],
+		selected: true
 	}
 ]

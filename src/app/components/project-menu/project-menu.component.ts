@@ -6,7 +6,7 @@ import { PopoverInfoProjectComponent } from '../../shared/popovers/popover-info-
 import { projectsDefault } from '../../mocks/projects.mock';
 import { Project } from '../../models/project.model';
 import { ManageProjectService } from '../../services/manage-project.service';
-import { pipe, Subject, takeUntil } from 'rxjs';
+import { pipe, Subject, takeUntil, tap } from 'rxjs';
 
 @Component({
   selector: 'app-project-menu',
@@ -37,21 +37,25 @@ export class ProjectMenuComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     //asignando datos por default
     this._manageProjectService.getProjects()
-      .pipe(takeUntil(this.destroy$))
+      .pipe(takeUntil(this.destroy$), tap(p => console.log(p)))
       .subscribe(p => {
         this.projects = p;
-        if (this.projects.length > 0) {
-          this.nameItemSelected = 'choose your project!'
-        }
-        else {
-          this.nameItemSelected = 'create new project!'
-        }
       });
+    this._manageProjectService.getProjectSelected()
+      .pipe(takeUntil(this.destroy$), tap(p => console.log('id: ' + p?.id + ' - selected: ' + p?.selected)))
+      .subscribe(p => {
+        this.nameItemSelected = p?.title || '';
+        this.idItemSelected = p?.id || '';
+
+      })
+
+    this.nameItemSelected = this.projects.length < 1 ? 'Create New Project' : this.nameItemSelected;
+
   }
 
   //?Selected Project
   toggleSelectedProject() {
-    this.isSelected = !this.isSelected; 
+    this.isSelected = !this.isSelected;
 
   }
 
@@ -59,7 +63,10 @@ export class ProjectMenuComponent implements OnInit, OnDestroy {
   itemProjectSelected(name: string, id: string) {
     this.nameItemSelected = name;
     this.idItemSelected = id;
+    const project = this._manageProjectService.getProjectById(this.idItemSelected);
+    this._manageProjectService.setProjectSelected(project);
     this.toggleSelectedProject(); //toggle selected project.
+
   }
 
   //?Selected Export Project
