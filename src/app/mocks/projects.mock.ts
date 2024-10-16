@@ -5,7 +5,7 @@ export const projectsDefault: Project[] = [
 	{
 		id: '1',
 		title: 'Project 1',
-		description: 'Descripcion del proyecto 1Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut ex in sapien luctus ultricies sit amet eget tortor. Integer id mattis mi. Pellentesque gravida dapibus mauris sit amet mollis. Aliquam ac vulputate augue. Praesent interdum volutpat sapien, vel rutrum urna placerat et. In hendrerit arcu est, a molestie dolor pulvinar',
+		description: 'Descripcion del proyecto 1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut ex in sapien luctus ultricies sit amet eget tortor. Integer id mattis mi. Pellentesque gravida dapibus mauris sit amet mollis. Aliquam ac vulputate augue. Praesent interdum volutpat sapien, vel rutrum urna placerat et. In hendrerit arcu est, a molestie dolor pulvinar',
 		tasks: [
 			{
 				id: '1',

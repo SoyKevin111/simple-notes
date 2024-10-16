@@ -30,11 +30,12 @@ export class ManageProjectService {
 
 
   //GET
-  /*   getProjectById(id: string): Observable<Project | undefined> {
+  /*   getProjectByIdObs(id: string): Observable<Project | undefined> {
       return this.projects$.pipe(
         map(p => p.find(p => p.id === id))
       );
     } */
+
   getProjectById(id: string): Project | undefined {
     return this.projectsSubject.getValue().find(project => project.id === id)
   }
@@ -48,11 +49,23 @@ export class ManageProjectService {
   //DEL 
   deleteProject(id: string): void {
     const updatedProjects = this.projectsSubject.getValue().filter(p => p.id !== id);
+    this.deleteProjectSelected();
     this.projectsSubject.next(updatedProjects);
   }
 
+  deleteProjectSelected() {
+    //recibe id
+    //busca y compara si el proyecto esta seleccionado
+    //si : vaciar el project selected
+    //sino: se deja tal cual
+    const isSelected: Project | undefined = this.projectsSubject.getValue().find(proj => proj.selected ? proj : undefined);
+    if (isSelected) {
+      this.projectSubjectSelected.next(undefined);
+    }
+  }
+
   //SET
-  editProject(projectModified: Project): void {
+  updateProjects(projectModified: Project): void {
     const updatedProjects = this.projectsSubject.getValue().map(p =>
       p.id === projectModified.id ? projectModified : p
     )
@@ -117,6 +130,7 @@ export class ManageProjectService {
 
     this.projectsSubject.next(updatedProjects);
   }
+
 }
 
 

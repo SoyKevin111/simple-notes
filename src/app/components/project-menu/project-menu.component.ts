@@ -44,9 +44,8 @@ export class ProjectMenuComponent implements OnInit, OnDestroy {
     this._manageProjectService.getProjectSelected()
       .pipe(takeUntil(this.destroy$), tap(p => console.log('id: ' + p?.id + ' - selected: ' + p?.selected)))
       .subscribe(p => {
-        this.nameItemSelected = p?.title || '';
-        this.idItemSelected = p?.id || '';
-
+          this.nameItemSelected = p?.title || '';
+          this.idItemSelected = p?.id || '';
       })
 
     this.nameItemSelected = this.projects.length < 1 ? 'Create New Project' : this.nameItemSelected;
