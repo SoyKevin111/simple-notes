@@ -54,7 +54,6 @@ export class ManageProjectService {
   }
 
   deleteProjectSelected() {
-    //recibe id
     //busca y compara si el proyecto esta seleccionado
     //si : vaciar el project selected
     //sino: se deja tal cual
