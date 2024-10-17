@@ -32,9 +32,8 @@ Puedes ver el diseño completo de la aplicación en Excalidraw haciendo clic en:
 
 ### Prototype
 ![texto](./public/assets/design/prototype.png)
-
-
-
+### avance (10/17/2024)
+![Descripción del GIF](./public/assets/version/version_20.gif)
 
 
 
