@@ -60,7 +60,9 @@ export class ModalNewProjectComponent {
       id: this._manageProjectService.getUniqueProjectId(),
       title: this.newProjectForm.get('title')?.value ?? '',
       description: this.newProjectForm.get('description')?.value ?? '',
-      tasks: []
+      tasks: [],
+      selected: false
+      
     }
     this._manageProjectService.addProject(project);
 

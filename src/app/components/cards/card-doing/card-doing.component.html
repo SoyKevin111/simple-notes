@@ -1,4 +1,4 @@
-<div class="container_card
+<div *ngIf="task" class="container_card
 	flex flex-col gap-1 items-center
 	w-full h-[4rem]
 	pe-1
@@ -8,7 +8,9 @@
 		flex gap-1
 		h-full w-full
 	">
-		<div class="card_function
+		<div 
+			(click)="backStep()"
+			class="card_function
 			w-[15%]
 
 		">
@@ -23,7 +25,9 @@
 				" src="assets\img\btn\btn_doing.png" alt="back">
 		</div>
 	
-		<div class="card_body
+		<div 
+			(click)="openModalViewTask()"
+			class="card_body
 			flex
 			w-[85%] h-[100%]
 			pe-3
@@ -57,7 +61,7 @@
 					text-[.8rem]
 					leading-tight
 				">
-				
+				{{task.name}}
 				</p>
 	
 				<div class="card_body_content--icon
@@ -74,7 +78,7 @@
 
 	</div>
 	<div
-		(click)="finish()"
+		(click)="finishStep()"
 		 type="button" class="cursor-pointer text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl font-medium rounded-sm text-[.7rem] w-[60%] py-[.1rem] text-center 
 		">
 			Finish

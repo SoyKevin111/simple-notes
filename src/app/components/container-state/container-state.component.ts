@@ -25,7 +25,7 @@ export class ContainerStateComponent {
   }
 
   openModalConfirmation() {
-    this._modalService.open(ModalWarningConfirmationComponent, { modal_confirmationVisible: true })
+    this._modalService.open(ModalWarningConfirmationComponent, { modal_confirmationVisible: true , type: 'allRemove'})
   }
 
 

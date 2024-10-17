@@ -1,10 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, Input, OnInit } from '@angular/core';
+import { AfterContentInit, Component, inject, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ManageProjectService } from '../../../services/manage-project.service';
 import { Project } from '../../../models/project.model';
-import { Observable } from 'rxjs';
-import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-modal-edit-project',
@@ -13,15 +11,14 @@ import { Title } from '@angular/platform-browser';
   templateUrl: './modal-edit-project.component.html',
   styleUrl: './modal-edit-project.component.scss'
 })
-export class ModalEditProjectComponent{
+export class ModalEditProjectComponent implements AfterContentInit {
 
+
+  project: Project | undefined;
 
   //Input
   @Input() modal_editProjectVisible: boolean = false;
   @Input() idProject: string = ''; //desde el popover
-
-  //Proyecto a usar
-  //project$: Observable<Project | undefined>
 
   //Servicio
   private _manageProjectService = inject(ManageProjectService);
@@ -32,11 +29,23 @@ export class ModalEditProjectComponent{
 
 
   constructor() {
+
     //inicializando form group
     this.editProjectForm = this._fb.group({
       title: ['', [Validators.required]],
       description: ['', [Validators.required]]
     })
+  }
+
+  ngAfterContentInit(): void {
+    this.project = this._manageProjectService.getProjectById(this.idProject);
+    if (this.project) {
+      this.editProjectForm.patchValue({
+        title: this.project.title,
+        description: this.project.description
+      })
+      console.log(this.idProject);
+    }
   }
 
   //Métodos
@@ -45,17 +54,14 @@ export class ModalEditProjectComponent{
   }
 
   onSubmit() {
-    if (this.editProjectForm.valid) {
-
+    if (this.editProjectForm.valid && this.project) {
+      const projectUp = {
+        ...this.project,
+        title: this.editProjectForm.get('title')?.value || '',
+        description: this.editProjectForm.get('description')?.value || ''
+      }
+      this._manageProjectService.updateProjects(projectUp);
       this.closeModal_editProject();
     }
   }
-
-/*   editProject(): Project | undefined {
-
-
-
-    this._manageProjectService.editProject(updatedProject);
-    return updatedProject
-  } */
 }

@@ -4,6 +4,8 @@ import { ModalService } from '../modal.service';
 import { FormGroup, ReactiveFormsModule, Validators, FormBuilder } from '@angular/forms';
 import { ToastService } from '../../toasts/toast.service';
 import { ToastComponent } from '../../toasts/toast/toast.component';
+import { Task } from '../../../models/task.model';
+import { ManageTaskService } from '../../../services/manage-task.service';
 
 @Component({
   selector: 'modal-add-card',
@@ -24,8 +26,7 @@ export class ModalAddCardComponent {
   //Servicio
   private _modalService = inject(ModalService);
   private _toastService = inject(ToastService);
-
-
+  private _manageTaskservice = inject(ManageTaskService);
   constructor() {
     this.addTaskForm = this._fb.group({
       name: ['', [Validators.required]],
@@ -53,12 +54,23 @@ export class ModalAddCardComponent {
       this._modalService.close();
       this.openToastAdd();
       // Servicio para agregar la tarjeta
+      this.addTask();
       console.log(`name: ${this.addTaskForm.get('name')?.value} - Description: ${this.addTaskForm.get('description')?.value} - State: ${this.addTaskForm.get('state')?.value}`);
     }
   }
 
+  addTask() {
+    const task: Task = {
+      id: this._manageTaskservice.getUniqueTaskId(),
+      name: this.addTaskForm.get('name')?.value || '',
+      description: this.addTaskForm.get('description')?.value || '',
+      state: this.addTaskForm.get('state')?.value || ''
+    }
+    this._manageTaskservice.addTask(task);
+  }
+
   openToastAdd() {
-    this._toastService.open(ToastComponent, { stateToast: true, typeToast: 'newTask' });
+    this._toastService.open(ToastComponent, { stateToast: true, typeToast: 'newTask', entityTitle: this.addTaskForm.get('name')?.value });
   }
 
 

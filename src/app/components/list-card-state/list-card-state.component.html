@@ -11,25 +11,20 @@
 	" [ngClass]="cardState === 'doing' ? 'gap-[1rem]': '' ">
 	<!--!CARD-->
 	@if(cardState === 'todo'){
-	<card-todo class="card--todo w-full h-full" />
-	<card-todo class="card--todo w-full h-full" />
-	<card-todo class="card--todo w-full h-full" />
-	<card-todo class="card--todo w-full h-full" />
-	<card-todo class="card--todo w-full h-full" />
+		@for(item of todoList ; track $index){
+			<card-todo [task]="item" class="card--todo"/>
+		}
 	}
 	@if(cardState === 'doing'){
-	<card-doing class="card--doing w-full h-full" />
-	<card-doing class="card--doing w-full h-full" />
-	<card-doing class="card--doing w-full h-full" />
-	<card-doing class="card--doing w-full h-full" />
-	<card-doing class="card--doing w-full h-full" />
+		@for(item of doingList ; track $index){
+			<card-doing [task]="item" class="card--doing" />
+		}
+
 	}
 	@if(cardState === 'done'){
-	<card-done class="card--done w-full h-full" />
-	<card-done class="card--done w-full h-full" />
-	<card-done class="card--done w-full h-full" />
-	<card-done class="card--done w-full h-full" />
-	<card-done class="card--done w-full h-full" />
+		@for(item of doneList ; track $index){
+			<card-done [task]="item" class="card--done" />
+		}
 	}
 
 
