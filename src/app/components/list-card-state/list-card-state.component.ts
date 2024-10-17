@@ -36,6 +36,8 @@ export class ListCardStateComponent implements OnInit, OnDestroy {
     .pipe(takeUntil(this.destroy$))
     .subscribe(tasks => {
       this.todoList = tasks.filter(task => task.state === 'Todo')
+      this.doingList = tasks.filter(task => task.state === 'Doing')
+      this.doneList = tasks.filter(task => task.state === 'Done')
     })
   }
 

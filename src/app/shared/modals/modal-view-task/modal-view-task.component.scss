@@ -27,7 +27,7 @@
 
 .noteWindow {
 	width: 85%;
-	height: 500px;
+	height: 540px;
 	transition: all 0.3s ease-in-out;
 	border-width: 1px;
 	border-radius: 8px;
@@ -104,6 +104,8 @@
 .note-body--content {
 	width: 90%;
 	height: 65%;
+	min-height: 50%;
+	max-height: 65%;
 	padding: 15px;
 	background-color: #f5f3e7;
 	font-size: 14px;

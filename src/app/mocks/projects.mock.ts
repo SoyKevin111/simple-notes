@@ -1,4 +1,4 @@
-import {  Project} from "../models/project.model";
+import { Project } from "../models/project.model";
 
 
 export const projectsDefault: Project[] = [
@@ -94,7 +94,25 @@ export const projectsDefault: Project[] = [
 				name: 'task 3',
 				description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut ex in sapien luctus ultricies sit amet eget tortor. Integer id mattis mi. Pellentesque gravida dapibus mauris sit amet mollis. Aliquam ac vulputate augue. Praesent interdum volutpat sapien, vel rutrum urna placerat et. In hendrerit arcu est, a molestie dolor pulvinar',
 				state: 'Done'
-			}
+			},
+			{
+				id: '4',
+				name: 'task 4',
+				description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut ex in sapien luctus ultricies sit amet eget tortor. Integer id mattis mi. Pellentesque gravida dapibus mauris sit amet mollis. Aliquam ac vulputate augue. Praesent interdum volutpat sapien, vel rutrum urna placerat et. In hendrerit arcu est, a molestie dolor pulvinar',
+				state: 'Todo'
+			},
+			{
+				id: '5',
+				name: 'task 5',
+				description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut ex in sapien luctus ultricies sit amet eget tortor. Integer id mattis mi. Pellentesque gravida dapibus mauris sit amet mollis. Aliquam ac vulputate augue. Praesent interdum volutpat sapien, vel rutrum urna placerat et. In hendrerit arcu est, a molestie dolor pulvinar',
+				state: 'Doing'
+			},
+			{
+				id: '6',
+				name: 'task 6',
+				description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut ex in sapien luctus ultricies sit amet eget tortor. Integer id mattis mi. Pellentesque gravida dapibus mauris sit amet mollis. Aliquam ac vulputate augue. Praesent interdum volutpat sapien, vel rutrum urna placerat et. In hendrerit arcu est, a molestie dolor pulvinar',
+				state: 'Done'
+			},
 		],
 		selected: true
 	}

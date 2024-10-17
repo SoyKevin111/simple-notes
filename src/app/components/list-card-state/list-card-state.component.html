@@ -16,14 +16,15 @@
 		}
 	}
 	@if(cardState === 'doing'){
-	<card-doing class="card--doing" />
-	<card-doing class="card--doing" />
+		@for(item of doingList ; track $index){
+			<card-doing [task]="item" class="card--doing" />
+		}
 
 	}
 	@if(cardState === 'done'){
-	<card-done class="card--done" />
-	<card-done class="card--done" />
-	<card-done class="card--done" />
+		@for(item of doneList ; track $index){
+			<card-done [task]="item" class="card--done" />
+		}
 	}
 
 

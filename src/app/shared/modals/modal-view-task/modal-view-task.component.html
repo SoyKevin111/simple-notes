@@ -1,4 +1,4 @@
-<div class="viewTaskContainer">
+<div *ngIf="task" class="viewTaskContainer">
 	<div 
 		[ngClass]="{'fullScreenWindows': fullScreen, 'noteWindow':!fullScreen}"
 		class="noteWindow">
@@ -20,13 +20,18 @@
 			</div>
 		</div>
 		<div class="note-box">
-			<h1 class="note-title">{{task.name}}</h1>
-			<h1 class="w-[90%] mx-auto">State: <span>{{task.state}}</span></h1>
+			<input [(ngModel)]="nameTask" type="text" class="
+			block
+			note-title
+			border-none
+			outline-none
+			bg-transparent
+			focus:ring-0
+			focus:border-none" [value]="task.name">
+			<h1 class="w-[90%] mx-auto mt-2">State: <span class="font-bold">{{task.state}}</span></h1>
 			<div class="note-body">
-				<div class="note-body--content" contenteditable="true">
-					<p>{{task.description}}</p>
-				</div>
-				<button class="save-note">Save</button>
+				<textarea [(ngModel)]="descriptionTask" class="note-body--content">{{task.description}}</textarea>
+				<button (click)="saveTask()" type="button" class="save-note">Save</button>
 			</div>
 		</div>
 	</div>

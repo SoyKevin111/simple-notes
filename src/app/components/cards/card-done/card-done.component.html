@@ -1,8 +1,10 @@
-<div class="container_card
+<div *ngIf="task" class="container_card
 	flex items-center justify-center gap-1
 	w-full h-[2.5rem]
 	">
-	<div class="card_body
+	<div 
+		(click)="openModalViewTask()"
+		class="card_body
 		flex
 		w-[85%] h-full
 		pe-3
@@ -37,7 +39,7 @@
 				text-[.8rem]
 				leading-tight
 			">
-			
+			{{task.name}}
 			</p>
 
 			<div class="card_body_content--icon

@@ -24,7 +24,7 @@ export class CardTodoComponent {
   openModalViewTask() {
     this._modalService.open(
       ModalViewTaskComponent,
-      { modal_viewTaskVisible: true }
+      { modal_viewTaskVisible: true , task: this.task}
     )
   }
 }
