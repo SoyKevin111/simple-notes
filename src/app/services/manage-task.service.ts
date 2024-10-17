@@ -52,6 +52,36 @@ export class ManageTaskService implements OnDestroy {
     this._manageProjectService.updateTasksSelectProject(updateTasks);
   }
 
+  removeAllTasks() {
+    this._manageProjectService.updateTasksSelectProject([]);
+  }
+
+  //steps
+
+  changeStep(idTask: string, mode: string) {
+    switch (mode) {
+      case 'start':
+        this.updateTaskState(idTask, 'Doing');
+        break;
+      case 'back':
+        this.updateTaskState(idTask, 'Todo');
+        break;
+      case 'finish':
+        this.updateTaskState(idTask, 'Done');
+        break;
+    }
+
+  }
+  private updateTaskState(id: string, newState: string) {
+    const updateTasks = this.tasksSubject.getValue().map(task =>
+      task.id === id ? { ...task, state: newState } : task
+    )
+    this.tasksSubject.next(updateTasks);
+    this._manageProjectService.updateTasksSelectProject(updateTasks);
+  }
+
+
+
   getUniqueTaskId(): string {
     const existingIds = this.tasksSubject.getValue().map(task => parseInt(task.id, 10));
     const newId = existingIds.length ? Math.max(...existingIds) + 1 : 1;

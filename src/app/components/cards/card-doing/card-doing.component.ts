@@ -5,6 +5,7 @@ import { Task } from '../../../models/task.model';
 import { CommonModule } from '@angular/common';
 import { ModalService } from '../../../shared/modals/modal.service';
 import { ModalViewTaskComponent } from '../../../shared/modals/modal-view-task/modal-view-task.component';
+import { ManageTaskService } from '../../../services/manage-task.service';
 
 @Component({
   selector: 'card-doing',
@@ -18,18 +19,28 @@ export class CardDoingComponent {
   //service
   private _toastService = inject(ToastService);
   private _modalService = inject(ModalService);
+  private _manageTaskService = inject(ManageTaskService);
 
   //Input
   @Input() task: Task | undefined;
 
   //Métodos
 
-  finish() {
+  backStep() {
+    if (this.task) {
+      this._manageTaskService.changeStep(this.task.id, 'back')
+    }
+  }
+
+  finishStep() {
     this.openToastfinish();
+    if (this.task) {
+      this._manageTaskService.changeStep(this.task.id, 'finish')
+    }
   }
 
   openToastfinish() {
-    this._toastService.open(ToastComponent, { stateToast: true, typeToast: 'completeTask' });
+    this._toastService.open(ToastComponent, { stateToast: true, typeToast: 'completeTask', entityTitle: this.task?.name });
   }
 
   openModalViewTask() {
@@ -37,5 +48,9 @@ export class CardDoingComponent {
       { modal_viewTaskVisible: true, task: this.task }
     )
   }
+
+
+
+
 
 }

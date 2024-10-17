@@ -3,6 +3,7 @@ import { ModalService } from '../../../shared/modals/modal.service';
 import { ModalViewTaskComponent } from '../../../shared/modals/modal-view-task/modal-view-task.component';
 import { Task } from '../../../models/task.model';
 import { CommonModule } from '@angular/common';
+import { ManageTaskService } from '../../../services/manage-task.service';
 
 @Component({
   selector: 'card-todo',
@@ -15,6 +16,8 @@ export class CardTodoComponent {
 
   //service
   private _modalService = inject(ModalService);
+  private _manageTaskService = inject(ManageTaskService);
+
 
   //Input task
   @Input() task: Task | undefined;
@@ -24,7 +27,13 @@ export class CardTodoComponent {
   openModalViewTask() {
     this._modalService.open(
       ModalViewTaskComponent,
-      { modal_viewTaskVisible: true , task: this.task}
+      { modal_viewTaskVisible: true, task: this.task }
     )
+  }
+
+  nexStep() {
+    if (this.task) {
+      this._manageTaskService.changeStep(this.task.id, 'start');
+    }
   }
 }
