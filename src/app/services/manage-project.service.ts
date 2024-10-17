@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { projectsDefault } from '../mocks/projects.mock';
 import { BehaviorSubject, map, max, Observable } from 'rxjs';
 import { Project } from '../models/project.model';
+import { Task } from '../models/task.model';
 
 @Injectable({
   providedIn: 'root'
@@ -73,23 +74,8 @@ export class ManageProjectService {
 
   //Generate ID
   getUniqueProjectId(): string {
-    const projects = this.projectsSubject.getValue();
-
-    if (projects.length === 0) {
-      return '1';
-    }
-
-    let newId = 1; //inicial
-    const existingIds = projects.map(project => parseInt(project.id, 10));//base 10
-    const maxId = Math.max(...existingIds);//guardar el mayor valor
-
-    newId = maxId + 1;
-
-    while (existingIds.includes(newId)) {
-      newId++
-    }
-
-
+    const existingIds = this.projectsSubject.getValue().map(project => parseInt(project.id, 10));
+    const newId = existingIds.length ? Math.max(...existingIds) + 1 : 1;
     return newId.toString();
   }
 
@@ -97,6 +83,22 @@ export class ManageProjectService {
 
   getProjectSelected(): Observable<Project | undefined> {
     return this.$projectSelected;
+  }
+
+
+  updateTasksSelectProject(tasks: Task[]) {
+    const selectedProject = this.projectSubjectSelected.getValue();
+    if (selectedProject) {
+      const updateSelectedProject: Project = {
+        ...selectedProject,
+        tasks: tasks
+      };
+      console.log(updateSelectedProject);
+      this.projectSubjectSelected.next(updateSelectedProject);
+      this.updateProjects(updateSelectedProject);
+    } else {
+      console.log('no hay proyecto seleccionado.')
+    }
   }
 
   //ocurren dos cambios de estado, por eso por consola se ejecuta el console.log de todos los proyectos,

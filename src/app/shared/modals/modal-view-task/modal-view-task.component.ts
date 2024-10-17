@@ -3,6 +3,7 @@ import { ModalService } from '../modal.service';
 import { CommonModule } from '@angular/common';
 import { Task } from '../../../models/task.model';
 import { FormsModule } from '@angular/forms';
+import { ManageTaskService } from '../../../services/manage-task.service';
 @Component({
   selector: 'app-modal-view-task',
   standalone: true,
@@ -15,6 +16,7 @@ export class ModalViewTaskComponent implements OnInit {
 
   fullScreen: boolean = false;
   private _modalService = inject(ModalService);
+  private _manageTaskService = inject(ManageTaskService)
   @Input() modal_viewTaskVisible: boolean = false;
   @Input() task: Task | undefined;
 
@@ -39,7 +41,10 @@ export class ModalViewTaskComponent implements OnInit {
   }
 
   saveTask() {
-    //actualizar tarea
+    if (this.task) {
+      this._manageTaskService.updateTask(this.task.id, this.nameTask, this.descriptionTask)
+      this.closeModalViewTask();
+    }
     //console.log(`name: ${this.nameTask} des: ${this.descriptionTask}`);
 
   }

@@ -32,6 +32,31 @@ export class ManageTaskService implements OnDestroy {
     return this.tasksSubject.asObservable();
   }
 
+  addTask(newTask: Task) {
+    const updateTasks = [...this.tasksSubject.getValue(), newTask];
+    this.tasksSubject.next(updateTasks);
+    this._manageProjectService.updateTasksSelectProject(updateTasks);
+  }
+
+  deleteTask(id: string) {
+    const updateTasks = this.tasksSubject.getValue().filter(task => task.id !== id);
+    this.tasksSubject.next(updateTasks);
+    this._manageProjectService.updateTasksSelectProject(updateTasks);
+  }
+
+  updateTask(taskId: string, newName: string, newDescription: string) {
+    const updateTasks = this.tasksSubject.getValue().map(task =>
+      task.id === taskId ? { ...task, name: newName, description: newDescription } : task
+    )
+    this.tasksSubject.next(updateTasks);
+    this._manageProjectService.updateTasksSelectProject(updateTasks);
+  }
+
+  getUniqueTaskId(): string {
+    const existingIds = this.tasksSubject.getValue().map(task => parseInt(task.id, 10));
+    const newId = existingIds.length ? Math.max(...existingIds) + 1 : 1;
+    return newId.toString();
+  }
 
   ngOnDestroy(): void {
     this.$destroy.next();
