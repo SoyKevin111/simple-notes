@@ -7,6 +7,7 @@ import { projectsDefault } from '../../mocks/projects.mock';
 import { Project } from '../../models/project.model';
 import { ManageProjectService } from '../../services/manage-project.service';
 import { pipe, Subject, takeUntil, tap } from 'rxjs';
+import { ManageExportProjectService } from '../../services/manage-export-project.service';
 
 @Component({
   selector: 'app-project-menu',
@@ -25,6 +26,7 @@ export class ProjectMenuComponent implements OnInit, OnDestroy {
   //servicio
   private _toastService = inject(ToastService);
   private _manageProjectService = inject(ManageProjectService);
+  private _manageExportProjectService = inject(ManageExportProjectService);
 
   //
   isSelected: boolean = false;
@@ -44,8 +46,8 @@ export class ProjectMenuComponent implements OnInit, OnDestroy {
     this._manageProjectService.getProjectSelected()
       .pipe(takeUntil(this.destroy$), tap(p => console.log('id: ' + p?.id + ' - selected: ' + p?.selected)))
       .subscribe(p => {
-          this.nameItemSelected = p?.title || '';
-          this.idItemSelected = p?.id || '';
+        this.nameItemSelected = p?.title || '';
+        this.idItemSelected = p?.id || '';
       })
 
     this.nameItemSelected = this.projects.length < 1 ? 'Create New Project' : this.nameItemSelected;
@@ -78,10 +80,13 @@ export class ProjectMenuComponent implements OnInit, OnDestroy {
   selectExportText() {
     this.toggleSelectedExport();
     this._toastService.open(ToastComponent, { stateToast: true, typeToast: 'exportTxt' })
+    this._manageExportProjectService.exportTxt();
+
   }
   selectExportJson() {
     this.toggleSelectedExport();
     this._toastService.open(ToastComponent, { stateToast: true, typeToast: 'exportJson' })
+    this._manageExportProjectService.exportJson();
   }
 
 
