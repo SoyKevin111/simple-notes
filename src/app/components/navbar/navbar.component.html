@@ -57,7 +57,9 @@
 		<div class="nav_secondBtn
 			flex gap-2
 		">
-			<div class="nav_secondBtn-child
+			<div 
+				(click)="fileInput.click()"
+				class="nav_secondBtn-child
 				cursor-pointer
 				bg-white
 				py-[.350rem] px-2
@@ -68,6 +70,7 @@
 				<img src="assets/img/navbar/open-folder.png"
 					class="w-[15px] h-[15px]"
 				alt="">
+				<input #fileInput (change)="onFileSelected($event)" type="file" accept=".json" class="hidden">
 			</div>
 
 			<div 

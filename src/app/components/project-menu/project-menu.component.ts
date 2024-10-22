@@ -79,13 +79,13 @@ export class ProjectMenuComponent implements OnInit, OnDestroy {
   // export y txt
   selectExportText() {
     this.toggleSelectedExport();
-    this._toastService.open(ToastComponent, { stateToast: true, typeToast: 'exportTxt' })
+    this._toastService.open(ToastComponent, { stateToast: true, typeToast: 'exportTxt', entityTitle: this.nameItemSelected })
     this._manageExportProjectService.exportTxt();
 
   }
   selectExportJson() {
     this.toggleSelectedExport();
-    this._toastService.open(ToastComponent, { stateToast: true, typeToast: 'exportJson' })
+    this._toastService.open(ToastComponent, { stateToast: true, typeToast: 'exportJson', entityTitle: this.nameItemSelected })
     this._manageExportProjectService.exportJson();
   }
 

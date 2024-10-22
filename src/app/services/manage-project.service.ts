@@ -28,23 +28,24 @@ export class ManageProjectService {
     return this.projects$;
   }
 
-
-
-  //GET
-  /*   getProjectByIdObs(id: string): Observable<Project | undefined> {
-      return this.projects$.pipe(
-        map(p => p.find(p => p.id === id))
-      );
-    } */
-
   getProjectById(id: string): Project | undefined {
     return this.projectsSubject.getValue().find(project => project.id === id)
   }
 
   //ADD
   addProject(new_project: Project): void {
-    const updatedProjects = [...this.projectsSubject.getValue(), new_project]
-    this.projectsSubject.next(updatedProjects);
+    if (!this.projectExisting(new_project.id)) {
+      const updatedProjects = [...this.projectsSubject.getValue(), new_project]
+      this.projectsSubject.next(updatedProjects);
+    }
+    else {
+      console.log('ya existe!');
+
+    }
+  }
+
+  projectExisting(id: string): boolean {
+    return this.projectsSubject.getValue().some(project => project.id === id);
   }
 
   //DEL 
