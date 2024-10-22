@@ -28,13 +28,12 @@ Este proyecto sigue el flujo de trabajo de **Gitflow** para una mejor organizaci
 
 Puedes ver el diseño completo de la aplicación en Excalidraw haciendo clic en:
 
-[![Ver Diseño en Excalidraw](https://img.shields.io/badge/Design-Excalidraw-blue?style=flat-square&logo=excalidraw)](https://excalidraw.com/#json=63jQNLSRYkh3KjZYJQDs9,XAEuc5Vy2PLJ-pSpODjFUA)
+[![Ver Diseño en Excalidraw](https://img.shields.io/badge/Design-Excalidraw-blue?style=flat-square&logo=excalidraw)](https://excalidraw.com/#json=CpfFCE7qVS1EHDYLc99n0,Crnw3EkvL-JFWjPxJNAMxA)
 
 ### Prototype
 ![texto](./public/assets/design/prototype.png)
-
-
-
+### avance (10/17/2024)
+![Descripción del GIF](./public/assets/version/version_20.gif)
 
 
 

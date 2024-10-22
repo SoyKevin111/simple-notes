@@ -1,30 +1,34 @@
 // Función para puntos de quiebre
 @function breakpoint($size) {
 
-  @if $size == 'mm' {
-    @return '(min-width: 360px)'; // Pequeño (Small)
+  @if $size =='m-sm' {
+    @return '(min-width: 370px)'; // Pequeño (Small) mobile
   }
-  
-  @else if $size == 'sm' {
+
+  @else if $size =='m-md' {
+    @return '(min-width: 480px)'; // mediano (meidum) mobile
+  }
+
+  @else if $size =='sm' {
     @return '(min-width: 640px)'; // Pequeño (Small)
   }
 
-  @else if $size == 'md' {
+  @else if $size =='md' {
     //@return '(min-width: 768px)'; // Mediano (Medium)
     @return '(min-width: 860px)'; // Mediano (Medium)
   }
 
-  @else if $size == 'lg' {
+  @else if $size =='lg' {
     //@return '(min-width: 1024px)'; // Grande (Large)
     @return '(min-width: 1300px)'; // Grande (Large)
   }
 
-  @else if $size == 'xl' {
-    @return '(min-width: 1280px)'; // Extra Grande (Extra Large)
+  @else if $size =='xl' {
+    @return '(min-width: 1520px)'; // Extra Grande (Extra Large)
   }
 
-  @else if $size == '2xl' {
-    @return '(min-width: 1536px)'; // Doble Extra Grande (2XL)
+  @else if $size =='2xl' {
+    @return '(min-width: 1920px)'; // Doble Extra Grande (2XL)
   }
 
   @else {
@@ -41,4 +45,86 @@
 
 
 
+//responsive width
+//$m-md(480), $sm(640), $md(860), $lg(1300), $xl(1520)
+@mixin responsive_width($m-md, $sm, $md, $lg, $xl) {
+  @include responsive-to('m-md') {
+    width: #{$m-md};
+  }
 
+  @include responsive-to('sm') {
+    width: #{$sm};
+  }
+
+  @include responsive-to('md') {
+    width: #{$md};
+  }
+
+  @include responsive-to('lg') {
+    width: #{$lg};
+  }
+
+  @include responsive-to('xl') {
+    width: #{$xl};
+  }
+}
+//responsive Left
+@mixin responsive_Left($m-md, $sm, $md, $lg, $xl) {
+  @include responsive-to('m-md') {
+    left: #{$m-md};
+  }
+
+  @include responsive-to('sm') {
+    left: #{$sm};
+  }
+
+  @include responsive-to('md') {
+    left: #{$md};
+  }
+
+  @include responsive-to('lg') {
+    left: #{$lg};
+  }
+
+  @include responsive-to('xl') {
+    left: #{$xl};
+  }
+}
+@mixin responsive_gap($m-md, $sm, $md, $lg, $xl) {
+  @include responsive-to('m-md') {
+    gap: #{$m-md};
+  }
+
+  @include responsive-to('sm') {
+    gap: #{$sm};
+  }
+
+  @include responsive-to('md') {
+    gap: #{$md};
+  }
+
+  @include responsive-to('lg') {
+    gap: #{$lg};
+  }
+
+  @include responsive-to('xl') {
+    gap: #{$xl};
+  }
+}
+
+
+@mixin no-select {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.containerHeader{
+  width: 100%;
+  position: fixed;
+  z-index: 290;
+}
+.containerFirst_state{
+  padding-top: 10rem;
+}

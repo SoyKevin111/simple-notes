@@ -1,0 +1,88 @@
+@use '../../app.component.scss' as *;
+
+//! Mobile Base
+
+//GLobal
+.container_nav {
+	@include no-select;
+	background-color: #343A40;
+}
+
+//prueba
+/* .container_nav--first {
+	border-left: 1px solid white;
+}
+
+.container_nav--second {
+	border-left: 1px solid white;
+	border-right: 1px solid white;
+}
+*/
+
+
+//input search apagado
+.nav_firstSearch-sm-xl {
+	display: none;
+}
+
+//! Responsive
+
+//input serach encendido
+
+.container_nav--first {
+
+	@include responsive-to('sm') {
+		width: 65%;
+
+		.nav_firstTitle {
+			font-size: 1.6rem;
+			flex-direction: row;
+			gap: .3rem;
+		}
+
+		.nav_firstSearch-m-sm-md {
+			display: none;
+		}
+
+		.nav_firstSearch-sm-xl {
+			width: 50%;
+			display: flex;
+
+		}
+	}
+
+	@include responsive-to('md') {
+
+		width: 50%;
+
+		.nav_firstTitle {
+			font-size: 2rem;
+		}
+
+		.nav_firstSearch-m-sm-md {
+			display: none;
+		}
+
+		.nav_firstSearch-sm-xl {
+			width: 50%;
+			display: flex;
+
+		}
+	}
+
+	@include responsive-to('lg') {
+		gap: 3rem;
+	}
+
+}
+
+.container_nav--second {
+	@include responsive-to('sm') {
+		width: 35%;
+	}
+
+	@include responsive-to('md') {
+		width: 50%;
+	}
+
+}

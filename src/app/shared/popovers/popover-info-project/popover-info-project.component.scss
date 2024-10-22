@@ -1,0 +1,107 @@
+@use '../../../app.component.scss' as *;
+
+.containerFunction_itemProject {
+  display: flex;
+  gap: 12px;
+}
+
+//DELETE
+.popover_deleteProject{
+  z-index: 150;
+  position: relative;
+}
+
+.icon-delete{
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.popover_remove--content {
+  position: absolute;
+  top: 50%;
+  left: 130%;
+  transform: translateY(-50%);
+  display: none;
+  padding: 6px 18px;
+  background-color: #1f2937; 
+  color: white;
+  border-radius: 8px;
+  white-space: nowrap;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.popover_deleteProject:hover .popover_remove--content {
+  display: block;
+}
+
+
+//INFO
+.popover_info {
+  z-index: 120;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.icon-popover {
+  height: 16px;
+  width: 16px;
+  cursor: pointer;
+}
+
+.popover_info--content {
+  width: 200px;
+  position: absolute;
+  top: 170%;
+  left: 100%;
+  display: none;
+  background-color: white;
+  border: 1px solid #e5e7eb; /* gray-200 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease;
+  border-radius: 8px;
+
+  //$m-md(480), $sm(640), $md(860), $lg(1300), $xl(1520)
+  @include responsive_width(250px, 300px, 350px,400px,450px);
+}
+
+.popover_info--text {
+  padding: 12px;
+  color: #111827; /* gray-900 */
+}
+
+.popover_info:hover .popover_info--content {
+  display: block;
+}
+
+
+//EDIT  
+.popover_edit {
+  z-index: 140;
+  position: relative;
+}
+
+.icon-edit {
+  height: 16px;
+  width: 16px;
+  cursor: pointer;
+}
+
+.popover_edit--content {
+  position: absolute;
+  top: 50%;
+  left: 130%;
+  transform: translateY(-50%);
+  display: none;
+  padding: 6px 18px;
+  background-color: #1f2937; 
+  color: white;
+  border-radius: 8px;
+  white-space: nowrap;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.popover_edit:hover .popover_edit--content {
+  display: block;
+}

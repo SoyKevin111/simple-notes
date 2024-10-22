@@ -1,11 +1,25 @@
 @use '../../app.component.scss' as *;
 
+//! MOBILE BASE
+
 .container_state{
 	background-color: #343A40;
 }
 
 
+//!Contenido Responsive.
+
+.container_state {
+	@include responsive-to('lg'){
+		height: 400px;
+	}
+	@include responsive-to('xl'){
+		height: 450px;
+	}
+}
+
 .grid_container--state{
+	@include no-select;
   
 	//!MD
   @include responsive-to('md'){
@@ -36,6 +50,7 @@
 
 	//!LG
   @include responsive-to('lg'){
+		width: 95%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 		grid-template-rows: 1fr;
@@ -60,8 +75,5 @@
 			grid-row: 1;
 		}
 	}
-
-
-
 
 } 

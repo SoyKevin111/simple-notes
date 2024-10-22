@@ -1,0 +1,39 @@
+<div *ngIf="task" class="viewTaskContainer">
+	<div 
+		[ngClass]="{'fullScreenWindows': fullScreen, 'noteWindow':!fullScreen}"
+		class="noteWindow">
+		<div class="note-header">
+			<div class="note-header--left">
+				<img src="#" alt="">
+				<p>Task</p>
+			</div>
+			<div class="note-header--right">
+				<div
+					(click)="closeModalViewTask()"
+					class="icon-windowTask minin">‒</div>
+				<div
+					(click)="activateFullScreen()"
+					class="icon-windowTask maxim">☐</div>
+				<div
+					(click)="closeModalViewTask()"
+					class="icon-windowTask close">⨉</div>
+			</div>
+		</div>
+		<div class="note-box">
+			<input [(ngModel)]="nameTask" type="text" class="
+			block
+			note-title
+			border-none
+			outline-none
+			bg-transparent
+			focus:ring-0
+			focus:border-none" [value]="task.name">
+			<h1 class="w-[90%] mx-auto mt-2">State: <span class="font-bold">{{task.state}}</span></h1>
+			<div class="note-body">
+				<textarea [(ngModel)]="descriptionTask" class="note-body--content">{{task.description}}</textarea>
+				<button (click)="saveTask()" type="button" class="save-note">Save</button>
+			</div>
+		</div>
+	</div>
+
+</div>

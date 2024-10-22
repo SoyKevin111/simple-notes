@@ -1,0 +1,163 @@
+@use '../../app.component.scss' as *;
+
+//!DESIGN MOBILE + RESPONSIVE
+
+//!Contenedor Padre
+.container_projectMenu {
+	@include no-select;
+	width: 100%;
+	height: 50px;
+	display: flex;
+	align-items: center;
+}
+
+//!Primer Hijo
+.split_selectProject {
+	width: 70%;
+	position: relative;
+}
+
+.split_selectProject--body {
+	background-color: #343A40;
+	width: 75%;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	padding: 5px 10px;
+	border-radius: .5rem;
+
+	@include responsive_width(55%, 40%, 30%, 20%, 20%);
+
+	p {
+		font-size: .8rem;
+		font-weight: bold;
+		color: #fff;
+	}
+
+	img {
+		width: 20px;
+	}
+}
+
+
+
+.project_content {
+	z-index: 100;
+	background-color: #343A40;
+	border: 1px solid white;
+	width: 75%;
+	position: absolute;
+	top: 110%;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+	display: none;
+
+	@include responsive_width(55%, 40%, 30%, 20%, 20%);
+
+
+	li {
+		cursor: pointer;
+		font-size: .8rem;
+		color: #fff;
+		padding: 7px 0px 7px 7px;
+		border-bottom: 1px solid rgb(236, 228, 228);
+	}
+}
+
+//active btn-selected
+.project_content--active {
+	display: flex;
+}
+
+
+.project_content--li {
+	padding: 4px 0px 4px 4px;
+	cursor: pointer;
+	border-radius: .3rem;
+	transition: background-color 0.2s ease;
+	display: flex;
+	align-items: center;
+
+	p {
+		font-size: .7rem;
+	}
+
+	popover-info-project{
+		margin-left: auto;
+		padding-right: 1rem;
+	}
+
+	&:hover {
+		background-color: rgba(200, 202, 207, .3);
+	}
+}
+
+
+
+//!Ssegundo Hijo
+
+.export_projectTo {
+	width: 30%;
+	display: flex;
+	justify-content: flex-end;
+	position: relative;
+}
+
+.btn_export {
+
+	width: 90%;
+	padding: .3rem .5rem;
+	background-color: #3B82F6;
+	border: 1px solid transparent;
+	border-radius: .3rem;
+	display: flex;
+	justify-content: space-between;
+	cursor: pointer;
+
+	@include responsive_width(60%, 40%, 32%, 22%, 20%);
+
+
+	&:active {
+		border: 1px solid rgb(134, 141, 147); // Cambia a este color al hacer clic
+	}
+
+	p {
+		font-size: .8rem;
+		color: #fff;
+	}
+
+	img {
+		width: 17px;
+	}
+}
+
+
+
+.content_optionsProject {
+	z-index: 110;
+	position: absolute;
+	top: 110%;
+	width: 110%;
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
+	padding: 3px;
+	border-radius: .3rem;
+	display: none;
+
+	@include responsive_width(70%, 50%, 35%, 27%, 23%);
+
+	li{
+		padding: 4px 2px;
+		font-size: .7rem;
+		cursor: pointer;
+	}
+
+}
+
+.content_optionsProject--activate {
+	display: flex;
+}
+
