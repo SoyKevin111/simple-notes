@@ -24,8 +24,6 @@ export class ToastService {
 
     //asignar inputs
     if (inputs) {
-      console.log(inputs);
-
       Object.assign(toastRef.instance, inputs);
     }
 

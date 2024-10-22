@@ -21,8 +21,6 @@ export class ModalService {
 
     //asignar inputs
     if (inputs) {
-      console.log(inputs);
-
       Object.assign(this.modalRef.instance, inputs);
     }
 

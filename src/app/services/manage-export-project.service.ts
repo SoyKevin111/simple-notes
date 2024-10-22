@@ -24,7 +24,6 @@ export class ManageExportProjectService implements OnDestroy {
     let content = `---SIMPLE NOTES---\n\n`;
     content += `User: random123\n\n`
     content += `Project: ${this.projectExport?.title}.\nDescription: ${this.projectExport?.description}.\n\n`
-    //console.log(this.projectExport);
 
     if (this.projectExport?.tasks !== undefined) {
       //Para Todo

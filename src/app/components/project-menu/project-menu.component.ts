@@ -39,12 +39,12 @@ export class ProjectMenuComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     //asignando datos por default
     this._manageProjectService.getProjects()
-      .pipe(takeUntil(this.destroy$), tap(p => console.log(p)))
+      .pipe(takeUntil(this.destroy$))
       .subscribe(p => {
         this.projects = p;
       });
     this._manageProjectService.getProjectSelected()
-      .pipe(takeUntil(this.destroy$), tap(p => console.log('id: ' + p?.id + ' - selected: ' + p?.selected)))
+      .pipe(takeUntil(this.destroy$))
       .subscribe(p => {
         this.nameItemSelected = p?.title || '';
         this.idItemSelected = p?.id || '';

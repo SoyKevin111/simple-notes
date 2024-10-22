@@ -44,7 +44,6 @@ export class ModalEditProjectComponent implements AfterContentInit {
         title: this.project.title,
         description: this.project.description
       })
-      console.log(this.idProject);
     }
   }
 

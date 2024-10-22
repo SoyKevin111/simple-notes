@@ -45,8 +45,6 @@ export class ModalViewTaskComponent implements OnInit {
       this._manageTaskService.updateTask(this.task.id, this.nameTask, this.descriptionTask)
       this.closeModalViewTask();
     }
-    //console.log(`name: ${this.nameTask} des: ${this.descriptionTask}`);
-
   }
 
 }

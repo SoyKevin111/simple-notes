@@ -39,7 +39,6 @@ export class ModalSearchComponent {
 
   onSubmit(){
     if(this.searchForm.valid){
-      console.log('Busqueda: '+ this.searchForm.get('prompt')?.value);
       this.closeModalSearch();
     }
   }

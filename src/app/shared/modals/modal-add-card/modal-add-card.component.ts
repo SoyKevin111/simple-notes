@@ -55,7 +55,6 @@ export class ModalAddCardComponent {
       this.openToastAdd();
       // Servicio para agregar la tarjeta
       this.addTask();
-      console.log(`name: ${this.addTaskForm.get('name')?.value} - Description: ${this.addTaskForm.get('description')?.value} - State: ${this.addTaskForm.get('state')?.value}`);
     }
   }
 

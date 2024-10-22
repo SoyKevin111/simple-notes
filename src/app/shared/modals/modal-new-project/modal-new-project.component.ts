@@ -47,7 +47,6 @@ export class ModalNewProjectComponent {
 
   onSubmit() { //al generar el nuevo proyecto.
     if (this.newProjectForm.valid) {
-      console.log(this.newProjectForm);
       const project = this.addProject();
       this.closeModal_newProject();
       this.openToastNewProject(project);

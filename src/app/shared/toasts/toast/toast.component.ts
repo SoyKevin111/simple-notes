@@ -35,10 +35,6 @@ export class ToastComponent implements OnInit {
     if (this.typeToast) {
       this.asignToast();
     }
-    else {
-      console.log('Asigna un type.');
-    }
-
     if (this.stateToast) {
       setTimeout(() => {
         this.startFadingOut();

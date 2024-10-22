@@ -40,7 +40,6 @@ export class ManageProjectService {
     }
     else {
       console.log('ya existe!');
-
     }
   }
 
@@ -94,11 +93,8 @@ export class ManageProjectService {
         ...selectedProject,
         tasks: tasks
       };
-      console.log(updateSelectedProject);
       this.projectSubjectSelected.next(updateSelectedProject);
       this.updateProjects(updateSelectedProject);
-    } else {
-      console.log('no hay proyecto seleccionado.')
     }
   }
 
