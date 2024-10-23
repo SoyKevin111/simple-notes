@@ -6,11 +6,11 @@
 	<div class="split_selectProject">
 
 		<div class="split_selectProject--body" (click)="toggleSelectedProject()">
-			<p class="btn_selectProject">{{nameItemSelected}}</p><span class="ml-1 text-[.8rem] text-white">id: {{idItemSelected}}</span>
+			<p class="btn_selectProject">{{nameItemSelected}}</p>
 			<img class="icon_selectProject" src="assets\img\icon\icon-menu-project\chevron down.svg">
 		</div>
 
-		<ul class="project_content" [ngClass]="{'project_content--active': isSelected}">
+		<ul class="project_content custom-scrollbar" [ngClass]="{'project_content--active': isSelected}">
 			@for (item of projects; track $index) {
 				<li class="project_content--li" (click)="itemProjectSelected(item.title, item.id)">
 					<p>{{item.title}}</p>

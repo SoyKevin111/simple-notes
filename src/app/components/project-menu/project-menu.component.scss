@@ -13,8 +13,9 @@
 
 //!Primer Hijo
 .split_selectProject {
-	width: 70%;
+	width: 75%;
 	position: relative;
+	z-index: 115;
 }
 
 .split_selectProject--body {
@@ -72,9 +73,6 @@
 
 
 .project_content--li {
-	padding: 4px 0px 4px 4px;
-	cursor: pointer;
-	border-radius: .3rem;
 	transition: background-color 0.2s ease;
 	display: flex;
 	align-items: center;
@@ -83,7 +81,7 @@
 		font-size: .7rem;
 	}
 
-	popover-info-project{
+	popover-info-project {
 		margin-left: auto;
 		padding-right: 1rem;
 	}
@@ -149,7 +147,7 @@
 
 	@include responsive_width(70%, 50%, 35%, 27%, 23%);
 
-	li{
+	li {
 		padding: 4px 2px;
 		font-size: .7rem;
 		cursor: pointer;
@@ -160,4 +158,3 @@
 .content_optionsProject--activate {
 	display: flex;
 }
-

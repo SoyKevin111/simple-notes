@@ -39,8 +39,7 @@ export class ManageProjectService {
       this.projectsSubject.next(updatedProjects);
     }
     else {
-      console.log('ya existe!');
-
+      this.showAlert();
     }
   }
 
@@ -133,33 +132,8 @@ export class ManageProjectService {
     this.projectsSubject.next(updatedProjects);
   }
 
+  showAlert() {
+    window.alert('El proyecto ya existe (ID)');
+  }
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*     if (project) {
-      const currentSelectedProject = this.projectSubjectSelected.getValue();
-      const updatedProjectsBefore = this.projectsSubject.getValue().map(p =>
-        p.id === currentSelectedProject?.id ? { ...p, selected: false } : p
-      );
-      this.projectsSubject.next(updatedProjectsBefore);
- 
-      //Nuevo proyecto seleccionado
-      const newProject = { ...project, selected: true };
-      const updatedProjectsAfter = this.projectsSubject.getValue().map(p =>
-        p.id === newProject.id ? newProject : p
-      );
-      this.projectsSubject.next(updatedProjectsAfter);
-      this.projectSubjectSelected.next(newProject);
-    } */
